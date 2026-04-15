@@ -8,7 +8,7 @@ Public Class REPORTES
     End Sub
     Dim conexion As New MySqlConnection("server=localhost;user id=root;password=1234567890;database=papeleria")
 
-    ' 🚀 AL INICIAR
+
     Private Sub Reportes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         dtpInicio.Value = DateTime.Now.AddDays(-7)
@@ -18,7 +18,7 @@ Public Class REPORTES
 
     End Sub
 
-    ' 🔍 BUSCAR REPORTES
+
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
 
         Try
@@ -39,7 +39,7 @@ Public Class REPORTES
 
             dgvReportes.DataSource = dt
 
-            ' 🔥 CALCULAR TOTAL
+            'CALCULAR TOTAL
             Dim total As Decimal = 0
 
             For Each fila As DataRow In dt.Rows

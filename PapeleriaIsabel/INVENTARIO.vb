@@ -4,7 +4,7 @@ Public Class INVENTARIO
     Dim conexion As New MySqlConnection("server=localhost;user id=root;password=1234567890;database=papeleria")
 
 
-    ' 🔄 CARGAR INVENTARIO
+
     Sub cargarInventario()
 
         Try
@@ -24,7 +24,7 @@ Public Class INVENTARIO
 
     End Sub
 
-    ' 🔄 CARGAR PRODUCTOS
+
     Sub cargarProductos()
 
         Dim dt As New DataTable
@@ -38,7 +38,7 @@ Public Class INVENTARIO
 
     End Sub
 
-    ' 🚀 AL INICIAR
+
     Private Sub Inventario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         cargarInventario()
@@ -48,7 +48,7 @@ Public Class INVENTARIO
 
     End Sub
 
-    ' 🖱️ CLICK EN TABLA
+
     Private Sub dgvInventario_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvInventario.CellClick
 
         If dgvInventario.CurrentRow Is Nothing Then Exit Sub
@@ -57,7 +57,7 @@ Public Class INVENTARIO
 
     End Sub
 
-    ' ➕ AGREGAR STOCK
+
     Private Sub btnAgregarStock_Click(sender As Object, e As EventArgs) Handles btnAgregarStock.Click
 
         If numCantidad.Value <= 0 Then
@@ -96,7 +96,7 @@ Public Class INVENTARIO
 
     End Sub
 
-    ' ➖ QUITAR STOCK
+
     Private Sub btnQuitarStock_Click(sender As Object, e As EventArgs) Handles btnQuitarStock.Click
 
         If numCantidad.Value <= 0 Then
@@ -107,7 +107,7 @@ Public Class INVENTARIO
         Try
             conexion.Open()
 
-            ' 🔥 VALIDAR STOCK
+
             Dim cmdCheck As New MySqlCommand("SELECT stock FROM inventario WHERE idProd=@id", conexion)
             cmdCheck.Parameters.AddWithValue("@id", cmbProducto.SelectedValue)
 
@@ -149,7 +149,7 @@ Public Class INVENTARIO
 
     End Sub
 
-    ' 🔍 BUSCAR
+
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
 
         Dim dt As New DataTable

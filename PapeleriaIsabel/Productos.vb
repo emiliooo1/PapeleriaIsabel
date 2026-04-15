@@ -2,7 +2,7 @@
 Public Class Productos
     Dim conexion As New MySqlConnection("server=localhost;user id=root;password=1234567890;database=papeleria")
 
-    ' 🔄 CARGAR PRODUCTOS
+
     Sub cargarProductos()
         Dim dt As New DataTable
 
@@ -15,7 +15,7 @@ Public Class Productos
         dgvProductos.DataSource = dt
     End Sub
 
-    ' 🔄 CARGAR PROVEEDORES
+
     Sub cargarProveedores()
         Dim dt As New DataTable
         Dim da As New MySqlDataAdapter("SELECT idProv, nombre FROM proveedores", conexion)
@@ -27,13 +27,13 @@ Public Class Productos
         cmbProveedor.ValueMember = "idProv"
     End Sub
 
-    ' 🚀 AL ABRIR FORM
+
     Private Sub Productos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarProductos()
         cargarProveedores()
     End Sub
 
-    ' ➕ AGREGAR
+
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
 
         If txtID.Text = "" Or txtNombre.Text = "" Then
@@ -72,7 +72,6 @@ Public Class Productos
 
     End Sub
 
-    ' 🖱️ CLICK EN TABLA
     Private Sub dgvProductos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProductos.CellClick
 
         If dgvProductos.CurrentRow Is Nothing Then Exit Sub
@@ -85,7 +84,7 @@ Public Class Productos
 
     End Sub
 
-    ' ✏️ EDITAR
+
     Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
 
         If txtID.Text = "" Then Exit Sub
@@ -117,7 +116,7 @@ Public Class Productos
 
     End Sub
 
-    ' ❌ ELIMINAR
+
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
 
         If txtID.Text = "" Then Exit Sub
@@ -145,7 +144,7 @@ Public Class Productos
 
     End Sub
 
-    ' 🔍 BUSCAR AUTOMÁTICO
+
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
 
         Dim dt As New DataTable

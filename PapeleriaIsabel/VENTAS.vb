@@ -9,7 +9,7 @@ Public Class VENTAS
 
     End Sub
 
-    ' 🔄 CARGAR PRODUCTOS
+
     Sub cargarProductos()
 
         Dim dt As New DataTable
@@ -23,7 +23,7 @@ Public Class VENTAS
 
     End Sub
 
-    ' 🚀 AL INICIAR
+
     Private Sub Ventas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         cargarProductos()
@@ -35,14 +35,14 @@ Public Class VENTAS
         dgvDetalle.Columns.Add("cantidad", "Cantidad")
         dgvDetalle.Columns.Add("subtotal", "Subtotal")
 
-        dgvDetalle.AllowUserToAddRows = False ' 🔥 QUITA FILA VACÍA
+        dgvDetalle.AllowUserToAddRows = False 'QUITA FILA VACÍA
 
         lblTotal.Text = "Total: $0"
         numCantidad.Value = 1
 
     End Sub
 
-    ' 🧠 MOSTRAR PRECIO
+
     Private Sub cmbProducto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbProducto.SelectedIndexChanged
 
         If cmbProducto.SelectedIndex = -1 Then Exit Sub
@@ -52,7 +52,7 @@ Public Class VENTAS
 
     End Sub
 
-    ' 🛒 AGREGAR PRODUCTO
+
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
 
         If numCantidad.Value <= 0 Then
@@ -67,7 +67,7 @@ Public Class VENTAS
         Dim fila As DataRowView = cmbProducto.SelectedItem
         precio = fila("precio")
 
-        ' 🔥 OBTENER STOCK
+        'OBTENER STOCK
         Dim cmdStock As New MySqlCommand("SELECT stock FROM inventario WHERE idProd=@id", conexion)
         cmdStock.Parameters.AddWithValue("@id", idProd)
 
@@ -75,7 +75,7 @@ Public Class VENTAS
         Dim stockActual As Integer = Convert.ToInt32(cmdStock.ExecuteScalar())
         conexion.Close()
 
-        ' 🔥 VER SI YA EXISTE EN CARRITO
+        'VER SI YA EXISTE EN CARRITO
         For Each filaGrid As DataGridViewRow In dgvDetalle.Rows
 
             If filaGrid.Cells(0).Value = idProd Then
@@ -114,7 +114,7 @@ Public Class VENTAS
 
     End Sub
 
-    ' 🧮 CALCULAR TOTAL
+
     Sub calcularTotal()
 
         total = 0
@@ -127,7 +127,7 @@ Public Class VENTAS
 
     End Sub
 
-    ' ❌ ELIMINAR DEL CARRITO
+
     Private Sub btnEliminarProducto_Click(sender As Object, e As EventArgs) Handles btnEliminarProducto.Click
 
         If dgvDetalle.CurrentRow Is Nothing Then
@@ -141,7 +141,7 @@ Public Class VENTAS
 
     End Sub
 
-    ' 💾 FINALIZAR VENTA
+
     Private Sub btnFinalizar_Click(sender As Object, e As EventArgs) Handles btnFinalizar.Click
 
         If dgvDetalle.Rows.Count = 0 Then
