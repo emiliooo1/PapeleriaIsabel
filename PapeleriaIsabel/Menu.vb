@@ -1,0 +1,65 @@
+﻿Public Class Menu
+    Private Sub Menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        Me.Hide()
+        Productos.Show()
+
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        Me.Hide()
+        PROVEEDORES.Show()
+
+    End Sub
+
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        Me.Hide()
+        VENTAS.Show()
+
+    End Sub
+
+    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
+        Me.Hide()
+        INVENTARIO.Show()
+
+    End Sub
+
+    Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
+        Me.Hide()
+        REPORTES.Show()
+
+    End Sub
+
+    Private Sub PRODUCTOSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PRODUCTOSToolStripMenuItem.Click
+        Me.Hide()
+        Productos.Show()
+
+    End Sub
+
+    Private Sub PROOVEDORESToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PROOVEDORESToolStripMenuItem.Click
+        Me.Hide()
+        PROVEEDORES.Show()
+
+    End Sub
+
+    Private Sub VENTASToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VENTASToolStripMenuItem.Click
+        Me.Hide()
+        VENTAS.Show()
+
+    End Sub
+
+    Private Sub INVENTARIOToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles INVENTARIOToolStripMenuItem.Click
+        Me.Hide()
+        INVENTARIO.Show()
+
+    End Sub
+
+    Private Sub REPORTESToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles REPORTESToolStripMenuItem.Click
+        Me.Hide()
+        REPORTES.Show()
+
+    End Sub
+End Class
