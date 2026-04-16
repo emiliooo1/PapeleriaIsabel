@@ -40,6 +40,7 @@ Partial Class Productos
         btnAgregar = New PictureBox()
         btnEditar = New PictureBox()
         btnEliminar = New PictureBox()
+        Button1 = New Button()
         CType(dgvProductos, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(btnAgregar, ComponentModel.ISupportInitialize).BeginInit()
@@ -50,121 +51,132 @@ Partial Class Productos
         ' dgvProductos
         ' 
         dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dgvProductos.Location = New Point(347, 80)
+        dgvProductos.Location = New Point(609, 218)
         dgvProductos.Name = "dgvProductos"
         dgvProductos.RowHeadersWidth = 51
-        dgvProductos.Size = New Size(512, 408)
+        dgvProductos.Size = New Size(1087, 559)
         dgvProductos.TabIndex = 0
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("MS Reference Sans Serif", 9F)
-        Label1.Location = New Point(369, 49)
+        Label1.Font = New Font("MS Reference Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label1.Location = New Point(609, 170)
         Label1.Name = "Label1"
-        Label1.Size = New Size(59, 19)
+        Label1.Size = New Size(111, 35)
         Label1.TabIndex = 1
         Label1.Text = "Buscar"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("MS Reference Sans Serif", 9F)
-        Label2.Location = New Point(21, 104)
+        Label2.Font = New Font("MS Reference Sans Serif", 16.2F)
+        Label2.Location = New Point(54, 309)
         Label2.Name = "Label2"
-        Label2.Size = New Size(25, 19)
+        Label2.Size = New Size(50, 35)
         Label2.TabIndex = 2
         Label2.Text = "ID"
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Font = New Font("MS Reference Sans Serif", 9F)
-        Label3.Location = New Point(16, 173)
+        Label3.Font = New Font("MS Reference Sans Serif", 16.2F)
+        Label3.Location = New Point(49, 378)
         Label3.Name = "Label3"
-        Label3.Size = New Size(69, 19)
+        Label3.Size = New Size(126, 35)
         Label3.TabIndex = 3
         Label3.Text = "Nombre"
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Font = New Font("MS Reference Sans Serif", 9F)
-        Label4.Location = New Point(21, 319)
+        Label4.Font = New Font("MS Reference Sans Serif", 16.2F)
+        Label4.Location = New Point(54, 524)
         Label4.Name = "Label4"
-        Label4.Size = New Size(54, 19)
+        Label4.Size = New Size(102, 35)
         Label4.TabIndex = 4
         Label4.Text = "Precio"
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Font = New Font("MS Reference Sans Serif", 9F)
-        Label5.Location = New Point(17, 250)
+        Label5.Font = New Font("MS Reference Sans Serif", 16.2F)
+        Label5.Location = New Point(50, 455)
         Label5.Name = "Label5"
-        Label5.Size = New Size(86, 19)
+        Label5.Size = New Size(158, 35)
         Label5.TabIndex = 5
         Label5.Text = "Proveedor"
         ' 
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Font = New Font("MS Reference Sans Serif", 9F)
-        Label6.Location = New Point(16, 386)
+        Label6.Font = New Font("MS Reference Sans Serif", 16.2F)
+        Label6.Location = New Point(49, 591)
         Label6.Name = "Label6"
-        Label6.Size = New Size(93, 19)
+        Label6.Size = New Size(181, 35)
         Label6.TabIndex = 6
         Label6.Text = "Descripcion"
         ' 
         ' txtID
         ' 
-        txtID.Location = New Point(109, 100)
+        txtID.Font = New Font("MS Reference Sans Serif", 16.2F)
+        txtID.Location = New Point(254, 378)
+        txtID.Multiline = True
         txtID.Name = "txtID"
-        txtID.Size = New Size(204, 27)
+        txtID.Size = New Size(219, 43)
         txtID.TabIndex = 7
         ' 
         ' txtBuscar
         ' 
-        txtBuscar.Location = New Point(438, 46)
+        txtBuscar.Font = New Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        txtBuscar.Location = New Point(743, 163)
+        txtBuscar.Multiline = True
         txtBuscar.Name = "txtBuscar"
-        txtBuscar.Size = New Size(381, 27)
+        txtBuscar.Size = New Size(660, 42)
         txtBuscar.TabIndex = 8
         ' 
         ' txtNombre
         ' 
-        txtNombre.Location = New Point(109, 165)
+        txtNombre.Font = New Font("MS Reference Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        txtNombre.Location = New Point(254, 309)
+        txtNombre.Multiline = True
         txtNombre.Name = "txtNombre"
-        txtNombre.Size = New Size(204, 27)
+        txtNombre.Size = New Size(219, 45)
         txtNombre.TabIndex = 9
         ' 
         ' txtPrecio
         ' 
-        txtPrecio.Location = New Point(109, 311)
+        txtPrecio.Font = New Font("MS Reference Sans Serif", 16.2F)
+        txtPrecio.Location = New Point(254, 583)
+        txtPrecio.Multiline = True
         txtPrecio.Name = "txtPrecio"
-        txtPrecio.Size = New Size(204, 27)
+        txtPrecio.Size = New Size(219, 43)
         txtPrecio.TabIndex = 10
         ' 
         ' txtDescripcion
         ' 
-        txtDescripcion.Location = New Point(109, 378)
+        txtDescripcion.Font = New Font("MS Reference Sans Serif", 16.2F)
+        txtDescripcion.Location = New Point(254, 524)
+        txtDescripcion.Multiline = True
         txtDescripcion.Name = "txtDescripcion"
-        txtDescripcion.Size = New Size(204, 27)
+        txtDescripcion.Size = New Size(219, 45)
         txtDescripcion.TabIndex = 11
         ' 
         ' cmbProveedor
         ' 
+        cmbProveedor.Font = New Font("MS Reference Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         cmbProveedor.FormattingEnabled = True
-        cmbProveedor.Location = New Point(109, 246)
+        cmbProveedor.Location = New Point(254, 450)
         cmbProveedor.Name = "cmbProveedor"
-        cmbProveedor.Size = New Size(204, 28)
+        cmbProveedor.Size = New Size(219, 42)
         cmbProveedor.TabIndex = 12
         ' 
         ' PictureBox1
         ' 
         PictureBox1.Image = My.Resources.Resources.download__1_
-        PictureBox1.Location = New Point(23, 435)
+        PictureBox1.Location = New Point(49, 887)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(66, 65)
+        PictureBox1.Size = New Size(93, 95)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 13
         PictureBox1.TabStop = False
@@ -172,9 +184,9 @@ Partial Class Productos
         ' btnAgregar
         ' 
         btnAgregar.Image = My.Resources.Resources.agregar
-        btnAgregar.Location = New Point(21, 12)
+        btnAgregar.Location = New Point(50, 94)
         btnAgregar.Name = "btnAgregar"
-        btnAgregar.Size = New Size(66, 65)
+        btnAgregar.Size = New Size(93, 95)
         btnAgregar.SizeMode = PictureBoxSizeMode.StretchImage
         btnAgregar.TabIndex = 14
         btnAgregar.TabStop = False
@@ -182,9 +194,9 @@ Partial Class Productos
         ' btnEditar
         ' 
         btnEditar.Image = My.Resources.Resources.editar
-        btnEditar.Location = New Point(127, 12)
+        btnEditar.Location = New Point(192, 94)
         btnEditar.Name = "btnEditar"
-        btnEditar.Size = New Size(66, 65)
+        btnEditar.Size = New Size(93, 95)
         btnEditar.SizeMode = PictureBoxSizeMode.StretchImage
         btnEditar.TabIndex = 15
         btnEditar.TabStop = False
@@ -192,19 +204,28 @@ Partial Class Productos
         ' btnEliminar
         ' 
         btnEliminar.Image = My.Resources.Resources.borrar
-        btnEliminar.Location = New Point(237, 12)
+        btnEliminar.Location = New Point(351, 94)
         btnEliminar.Name = "btnEliminar"
-        btnEliminar.Size = New Size(66, 65)
+        btnEliminar.Size = New Size(93, 95)
         btnEliminar.SizeMode = PictureBoxSizeMode.StretchImage
         btnEliminar.TabIndex = 16
         btnEliminar.TabStop = False
+        ' 
+        ' Button1
+        ' 
+        Button1.Enabled = False
+        Button1.Location = New Point(21, 33)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(1705, 976)
+        Button1.TabIndex = 19
+        Button1.UseVisualStyleBackColor = True
         ' 
         ' Productos
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
-        ClientSize = New Size(890, 522)
+        ClientSize = New Size(1747, 1043)
         Controls.Add(btnEliminar)
         Controls.Add(btnEditar)
         Controls.Add(btnAgregar)
@@ -222,11 +243,11 @@ Partial Class Productos
         Controls.Add(Label2)
         Controls.Add(Label1)
         Controls.Add(dgvProductos)
+        Controls.Add(Button1)
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
-        MaximizeBox = False
         MinimizeBox = False
         Name = "Productos"
-        StartPosition = FormStartPosition.CenterScreen
+        StartPosition = FormStartPosition.Manual
         Text = "PRODUCTOS"
         CType(dgvProductos, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
@@ -254,4 +275,5 @@ Partial Class Productos
     Friend WithEvents btnAgregar As PictureBox
     Friend WithEvents btnEditar As PictureBox
     Friend WithEvents btnEliminar As PictureBox
+    Friend WithEvents Button1 As Button
 End Class

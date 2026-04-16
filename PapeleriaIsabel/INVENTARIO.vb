@@ -46,6 +46,14 @@ Public Class INVENTARIO
 
         numCantidad.Value = 1
 
+        Me.AutoScaleMode = AutoScaleMode.Dpi
+        Me.FormBorderStyle = FormBorderStyle.Sizable
+        Me.MaximizedBounds = Screen.PrimaryScreen.WorkingArea
+        Me.WindowState = FormWindowState.Maximized
+
+        dgvInventario.DefaultCellStyle.Font = New Font("Microsoft Sans Serif", 14)
+        dgvInventario.ColumnHeadersDefaultCellStyle.Font = New Font("Microsoft Sans Serif", 16, FontStyle.Bold)
+        dgvInventario.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
     End Sub
 
 
@@ -168,8 +176,10 @@ Public Class INVENTARIO
     End Sub
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        Me.Hide()
+        Me.Close()
         Menu.Show()
 
     End Sub
+
+
 End Class

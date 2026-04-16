@@ -17,6 +17,15 @@ Public Class PROVEEDORES
 
     Private Sub Proveedores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarProveedores()
+
+        Me.AutoScaleMode = AutoScaleMode.Dpi
+        Me.FormBorderStyle = FormBorderStyle.Sizable
+        Me.MaximizedBounds = Screen.PrimaryScreen.WorkingArea
+        Me.WindowState = FormWindowState.Maximized
+
+        dgvProveedores.DefaultCellStyle.Font = New Font("Microsoft Sans Serif", 14)
+        dgvProveedores.ColumnHeadersDefaultCellStyle.Font = New Font("Microsoft Sans Serif", 16, FontStyle.Bold)
+        dgvProveedores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
     End Sub
 
 
@@ -141,6 +150,10 @@ Public Class PROVEEDORES
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Me.Hide()
         Menu.Show()
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
     End Sub
 End Class

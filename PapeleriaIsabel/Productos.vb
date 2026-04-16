@@ -31,6 +31,15 @@ Public Class Productos
     Private Sub Productos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarProductos()
         cargarProveedores()
+
+        Me.AutoScaleMode = AutoScaleMode.Dpi
+        Me.FormBorderStyle = FormBorderStyle.Sizable
+        Me.MaximizedBounds = Screen.PrimaryScreen.WorkingArea
+        Me.WindowState = FormWindowState.Maximized
+
+        dgvProductos.DefaultCellStyle.Font = New Font("Microsoft Sans Serif", 14)
+        dgvProductos.ColumnHeadersDefaultCellStyle.Font = New Font("Microsoft Sans Serif", 16, FontStyle.Bold)
+        dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
     End Sub
 
 

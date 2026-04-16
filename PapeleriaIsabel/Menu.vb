@@ -1,15 +1,18 @@
 ﻿Public Class Menu
     Private Sub Menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Me.AutoScaleMode = AutoScaleMode.Dpi
+        Me.FormBorderStyle = FormBorderStyle.Sizable
+        Me.MaximizedBounds = Screen.PrimaryScreen.WorkingArea
+        Me.WindowState = FormWindowState.Maximized
     End Sub
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs)
         Me.Hide()
         Productos.Show()
 
     End Sub
 
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs)
         Me.Hide()
         PROVEEDORES.Show()
 
@@ -60,6 +63,38 @@
     Private Sub REPORTESToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles REPORTESToolStripMenuItem.Click
         Me.Hide()
         REPORTES.Show()
+
+    End Sub
+
+    Private Sub PictureBox1_Click_1(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        Me.Hide()
+        Productos.Show()
+
+    End Sub
+
+    Private Sub PictureBox2_Click_1(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        Me.Hide()
+        PROVEEDORES.Show()
+
+    End Sub
+
+    Private Sub Menu_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+
+        If e.CloseReason = CloseReason.UserClosing Then
+
+            If MessageBox.Show("¿Salir del sistema?", "Confirmar", MessageBoxButtons.YesNo) = DialogResult.No Then
+                e.Cancel = True
+            Else
+                Application.Exit()
+            End If
+
+        End If
+
+    End Sub
+
+    Private Sub CANCELARVENTAToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CANCELARVENTAToolStripMenuItem.Click
+        Me.Hide()
+        CancelarVenta.Show()
 
     End Sub
 End Class

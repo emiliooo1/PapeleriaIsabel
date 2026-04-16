@@ -20,9 +20,12 @@ Public Class Login
             If dr.HasRows Then
 
                 Dim menu As New Menu
+                Me.Hide()
+
+
                 menu.Show()
 
-                Me.Hide()
+
             Else
                 MessageBox.Show("Usuario o contraseña incorrectos")
                 TextBox1.Clear()
@@ -36,6 +39,20 @@ Public Class Login
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
         End Try
+
+    End Sub
+
+    Private Sub Menu_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+
+        If e.CloseReason = CloseReason.UserClosing Then
+
+            If MessageBox.Show("¿Salir del sistema?", "Confirmar", MessageBoxButtons.YesNo) = DialogResult.No Then
+                e.Cancel = True
+            Else
+                Application.Exit()
+            End If
+
+        End If
 
     End Sub
 

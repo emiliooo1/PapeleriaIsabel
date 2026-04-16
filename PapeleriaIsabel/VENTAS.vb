@@ -4,7 +4,7 @@ Public Class VENTAS
     Dim conexion As New MySqlConnection("server=localhost;user id=root;password=1234567890;database=papeleria")
     Dim total As Decimal = 0
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        Me.Hide()
+        Me.Close()
         Menu.Show()
 
     End Sub
@@ -39,6 +39,15 @@ Public Class VENTAS
 
         lblTotal.Text = "Total: $0"
         numCantidad.Value = 1
+
+        Me.AutoScaleMode = AutoScaleMode.Dpi
+        Me.FormBorderStyle = FormBorderStyle.Sizable
+        Me.MaximizedBounds = Screen.PrimaryScreen.WorkingArea
+        Me.WindowState = FormWindowState.Maximized
+
+        dgvDetalle.DefaultCellStyle.Font = New Font("Microsoft Sans Serif", 14)
+        dgvDetalle.ColumnHeadersDefaultCellStyle.Font = New Font("Microsoft Sans Serif", 16, FontStyle.Bold)
+        dgvDetalle.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
 
     End Sub
 
@@ -149,10 +158,38 @@ Public Class VENTAS
             Exit Sub
         End If
 
+        Dim recibidoStr As String = InputBox("Total a pagar: $" & total & vbCrLf & "Ingrese el dinero recibido:")
+
+        If recibidoStr = "" Then Exit Sub
+
+        Dim recibido As Decimal
+
+        If Not Decimal.TryParse(recibidoStr, recibido) Then
+            MessageBox.Show("Cantidad inválida")
+            Exit Sub
+        End If
+
+
+        If recibido < total Then
+            MessageBox.Show("Dinero insuficiente")
+            Exit Sub
+        End If
+
+
+        Dim cambio As Decimal = recibido - total
+
+        MessageBox.Show("Cambio: $" & cambio)
+
+
+        guardarVenta()
+
+    End Sub
+
+    Sub guardarVenta()
+
         Try
             conexion.Open()
 
-            ' Insertar venta
             Dim cmdVenta As New MySqlCommand("INSERT INTO ventas(total, idUsuario) VALUES(@total,@user)", conexion)
             cmdVenta.Parameters.AddWithValue("@total", total)
             cmdVenta.Parameters.AddWithValue("@user", 1)
@@ -161,12 +198,13 @@ Public Class VENTAS
 
             Dim idVenta As Integer = cmdVenta.LastInsertedId
 
-            ' Insertar detalle
             For Each fila As DataGridViewRow In dgvDetalle.Rows
 
+                If fila.IsNewRow Then Continue For
+
                 Dim cmdDetalle As New MySqlCommand("
-                INSERT INTO detalle_ventas(idVenta,idProd,precioUnitario,cantidad,subtotal)
-                VALUES(@v,@p,@pre,@cant,@sub)", conexion)
+            INSERT INTO detalle_ventas(idVenta,idProd,precioUnitario,cantidad,subtotal)
+            VALUES(@v,@p,@pre,@cant,@sub)", conexion)
 
                 cmdDetalle.Parameters.AddWithValue("@v", idVenta)
                 cmdDetalle.Parameters.AddWithValue("@p", fila.Cells(0).Value)
@@ -176,11 +214,11 @@ Public Class VENTAS
 
                 cmdDetalle.ExecuteNonQuery()
 
-                ' Actualizar inventario
+
                 Dim cmdInv As New MySqlCommand("
-                UPDATE inventario 
-                SET stock = stock - @cant 
-                WHERE idProd=@id", conexion)
+            UPDATE inventario 
+            SET stock = stock - @cant 
+            WHERE idProd=@id", conexion)
 
                 cmdInv.Parameters.AddWithValue("@cant", fila.Cells(3).Value)
                 cmdInv.Parameters.AddWithValue("@id", fila.Cells(0).Value)
@@ -191,13 +229,12 @@ Public Class VENTAS
 
             conexion.Close()
 
-            MessageBox.Show("Venta realizada")
+            MessageBox.Show("Venta realizada correctamente")
 
-            ' Limpiar
+
             dgvDetalle.Rows.Clear()
             total = 0
             lblTotal.Text = "Total: $0"
-            numCantidad.Value = 1
 
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
@@ -205,4 +242,6 @@ Public Class VENTAS
         End Try
 
     End Sub
+
+
 End Class

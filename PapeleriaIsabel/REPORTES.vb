@@ -1,8 +1,9 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports Microsoft.Office.Interop
+Imports MySql.Data.MySqlClient
 
 Public Class REPORTES
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        Me.Hide()
+        Me.Close()
         Menu.Show()
 
     End Sub
@@ -16,6 +17,14 @@ Public Class REPORTES
 
         dgvReportes.AllowUserToAddRows = False
 
+        Me.AutoScaleMode = AutoScaleMode.Dpi
+        Me.FormBorderStyle = FormBorderStyle.Sizable
+        Me.MaximizedBounds = Screen.PrimaryScreen.WorkingArea
+        Me.WindowState = FormWindowState.Maximized
+
+        dgvReportes.DefaultCellStyle.Font = New Font("Microsoft Sans Serif", 14)
+        dgvReportes.ColumnHeadersDefaultCellStyle.Font = New Font("Microsoft Sans Serif", 16, FontStyle.Bold)
+        dgvReportes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
     End Sub
 
 
@@ -27,7 +36,8 @@ Public Class REPORTES
             Dim query As String = "
             SELECT v.idVenta, v.fecha, v.total
             FROM ventas v
-            WHERE DATE(v.fecha) BETWEEN @inicio AND @fin
+            WHERE DATE(v.fecha) BETWEEN @inicio AND @fin 
+            AND v.estado='Activa'
             ORDER BY v.fecha DESC"
 
             Dim da As New MySqlDataAdapter(query, conexion)
@@ -54,5 +64,24 @@ Public Class REPORTES
 
     End Sub
 
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        Dim app As New Excel.Application
+        Dim libro As Excel.Workbook = app.Workbooks.Add
+        Dim hoja As Excel.Worksheet = libro.Sheets(1)
 
+        ' 🔥 ENCABEZADOS
+        For i As Integer = 0 To dgvReportes.Columns.Count - 1
+            hoja.Cells(1, i + 1) = dgvReportes.Columns(i).HeaderText
+        Next
+
+        ' 🔥 DATOS
+        For i As Integer = 0 To dgvReportes.Rows.Count - 1
+            For j As Integer = 0 To dgvReportes.Columns.Count - 1
+                hoja.Cells(i + 2, j + 1) = dgvReportes.Rows(i).Cells(j).Value
+            Next
+        Next
+
+        ' 🔥 MOSTRAR EXCEL
+        app.Visible = True
+    End Sub
 End Class

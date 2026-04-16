@@ -31,74 +31,81 @@ Partial Class REPORTES
         dgvReportes = New DataGridView()
         PictureBox1 = New PictureBox()
         lblTotal = New Label()
+        Button1 = New Button()
+        PictureBox2 = New PictureBox()
         CType(dgvReportes, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' dtpInicio
         ' 
-        dtpInicio.Font = New Font("MS Reference Sans Serif", 10.2F)
+        dtpInicio.Font = New Font("MS Reference Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         dtpInicio.Format = DateTimePickerFormat.Short
-        dtpInicio.Location = New Point(173, 53)
+        dtpInicio.Location = New Point(675, 94)
         dtpInicio.Name = "dtpInicio"
-        dtpInicio.Size = New Size(228, 28)
+        dtpInicio.Size = New Size(228, 40)
         dtpInicio.TabIndex = 0
         ' 
         ' dtpFin
         ' 
-        dtpFin.Font = New Font("MS Reference Sans Serif", 10.2F)
+        dtpFin.CalendarFont = New Font("MS Reference Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        dtpFin.Font = New Font("MS Reference Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         dtpFin.Format = DateTimePickerFormat.Short
-        dtpFin.Location = New Point(448, 53)
+        dtpFin.Location = New Point(1073, 94)
         dtpFin.Name = "dtpFin"
-        dtpFin.Size = New Size(217, 28)
+        dtpFin.Size = New Size(217, 40)
         dtpFin.TabIndex = 1
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("MS Reference Sans Serif", 10.2F)
-        Label1.Location = New Point(85, 59)
+        Label1.BackColor = Color.WhiteSmoke
+        Label1.Font = New Font("MS Reference Sans Serif", 16.2F)
+        Label1.Location = New Point(532, 99)
         Label1.Name = "Label1"
-        Label1.Size = New Size(68, 22)
+        Label1.Size = New Size(111, 35)
         Label1.TabIndex = 2
         Label1.Text = "Fecha:"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("MS Reference Sans Serif", 10.2F)
-        Label2.Location = New Point(407, 58)
+        Label2.BackColor = Color.WhiteSmoke
+        Label2.Font = New Font("MS Reference Sans Serif", 16.2F)
+        Label2.Location = New Point(965, 99)
         Label2.Name = "Label2"
-        Label2.Size = New Size(25, 22)
+        Label2.Size = New Size(41, 35)
         Label2.TabIndex = 3
         Label2.Text = "al"
         ' 
         ' btnBuscar
         ' 
         btnBuscar.BackColor = Color.PaleTurquoise
-        btnBuscar.Font = New Font("MS Reference Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        btnBuscar.Location = New Point(343, 104)
+        btnBuscar.Font = New Font("MS Reference Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnBuscar.Location = New Point(870, 161)
         btnBuscar.Name = "btnBuscar"
-        btnBuscar.Size = New Size(118, 51)
+        btnBuscar.Size = New Size(208, 57)
         btnBuscar.TabIndex = 4
         btnBuscar.Text = "BUSCAR"
         btnBuscar.UseVisualStyleBackColor = False
         ' 
         ' dgvReportes
         ' 
+        dgvReportes.BackgroundColor = Color.White
         dgvReportes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dgvReportes.Location = New Point(25, 161)
+        dgvReportes.Location = New Point(58, 224)
         dgvReportes.Name = "dgvReportes"
         dgvReportes.RowHeadersWidth = 51
-        dgvReportes.Size = New Size(756, 219)
+        dgvReportes.Size = New Size(1625, 615)
         dgvReportes.TabIndex = 5
         ' 
         ' PictureBox1
         ' 
         PictureBox1.Image = My.Resources.Resources.download__1_
-        PictureBox1.Location = New Point(25, 386)
+        PictureBox1.Location = New Point(49, 887)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(60, 62)
+        PictureBox1.Size = New Size(93, 95)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 6
         PictureBox1.TabStop = False
@@ -106,19 +113,39 @@ Partial Class REPORTES
         ' lblTotal
         ' 
         lblTotal.AutoSize = True
-        lblTotal.Font = New Font("MS Reference Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lblTotal.Location = New Point(285, 395)
+        lblTotal.Font = New Font("MS Reference Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        lblTotal.Location = New Point(708, 906)
         lblTotal.Name = "lblTotal"
-        lblTotal.Size = New Size(147, 35)
+        lblTotal.Size = New Size(209, 49)
         lblTotal.TabIndex = 7
         lblTotal.Text = "TOTAL: $"
+        ' 
+        ' Button1
+        ' 
+        Button1.Enabled = False
+        Button1.Location = New Point(21, 33)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(1705, 976)
+        Button1.TabIndex = 12
+        Button1.UseVisualStyleBackColor = True
+        ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
+        PictureBox2.Location = New Point(1601, 50)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(111, 119)
+        PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox2.TabIndex = 13
+        PictureBox2.TabStop = False
         ' 
         ' REPORTES
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
-        ClientSize = New Size(800, 450)
+        ClientSize = New Size(1747, 1043)
+        Controls.Add(PictureBox2)
         Controls.Add(lblTotal)
         Controls.Add(PictureBox1)
         Controls.Add(dgvReportes)
@@ -127,14 +154,15 @@ Partial Class REPORTES
         Controls.Add(Label1)
         Controls.Add(dtpFin)
         Controls.Add(dtpInicio)
+        Controls.Add(Button1)
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
-        MaximizeBox = False
         MinimizeBox = False
         Name = "REPORTES"
-        StartPosition = FormStartPosition.CenterScreen
+        StartPosition = FormStartPosition.Manual
         Text = "REPORTES"
         CType(dgvReportes, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -147,4 +175,6 @@ Partial Class REPORTES
     Friend WithEvents dgvReportes As DataGridView
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents lblTotal As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents PictureBox2 As PictureBox
 End Class
