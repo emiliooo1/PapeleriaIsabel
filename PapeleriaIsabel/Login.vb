@@ -1,44 +1,57 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class Login
     Dim conexion As New MySqlConnection("server=localhost;user id=root;password=1234567890;database=papeleria")
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Try
-            conexion.Open()
 
-            Dim consulta As String = "SELECT * FROM usuarios WHERE usuario=@user AND contrasena=@pass"
-            Dim cmd As New MySqlCommand(consulta, conexion)
+        Dim cmd As New MySqlCommand("
+    SELECT idUsuario, tipo 
+    FROM usuarios 
+    WHERE usuario=@user AND contrasena=@pass", conexion)
 
-            cmd.Parameters.AddWithValue("@user", TextBox1.Text)
-            cmd.Parameters.AddWithValue("@pass", TextBox2.Text)
+        cmd.Parameters.AddWithValue("@user", txtUsuario.Text)
+        cmd.Parameters.AddWithValue("@pass", txtContrasena.Text)
 
-            Dim dr As MySqlDataReader = cmd.ExecuteReader()
+        conexion.Open()
+        Dim dr As MySqlDataReader = cmd.ExecuteReader()
 
-            If dr.HasRows Then
+        If dr.Read() Then
 
-                Dim menu As New Menu
-                Me.Hide()
+            Dim idUsuario As Integer = dr("idUsuario")
+            Dim tipo As String = dr("tipo").ToString()
 
+            dr.Close()
 
-                menu.Show()
+            ' 🔥 ACTUALIZAR LOGIN
+            Dim cmdUpdate As New MySqlCommand("
+        UPDATE usuarios 
+        SET ultimo_login = NOW() 
+        WHERE idUsuario=@id", conexion)
 
-
-            Else
-                MessageBox.Show("Usuario o contraseña incorrectos")
-                TextBox1.Clear()
-                TextBox2.Clear()
-
-
-            End If
+            cmdUpdate.Parameters.AddWithValue("@id", idUsuario)
+            cmdUpdate.ExecuteNonQuery()
 
             conexion.Close()
 
-        Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
-        End Try
+            ' 🔥 CONTROL DE ACCESO
+            If tipo = "Administrador" Then
+
+                Menu.Show()
+
+            ElseIf tipo = "Vendedor" Then
+
+                VENTAS.tipoUsuario = tipo
+                VENTAS.Show()
+
+            End If
+
+            Me.Hide()
+
+        Else
+            conexion.Close()
+            MessageBox.Show("Usuario o contraseña incorrectos")
+        End If
 
     End Sub
 

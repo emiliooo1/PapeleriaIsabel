@@ -25,8 +25,8 @@
     End Sub
 
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
-        Me.Hide()
-        INVENTARIO.Show()
+        Hide
+        INVENTARIO.Show
 
     End Sub
 
@@ -93,6 +93,18 @@
     End Sub
 
     Private Sub CANCELARVENTAToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CANCELARVENTAToolStripMenuItem.Click
+        Me.Hide()
+        CancelarVenta.Show()
+
+    End Sub
+
+    Private Sub USUARIOSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles USUARIOSToolStripMenuItem.Click
+        Me.Hide()
+        Usuarios.Show()
+
+    End Sub
+
+    Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
         Me.Hide()
         CancelarVenta.Show()
 

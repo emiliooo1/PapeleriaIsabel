@@ -42,12 +42,15 @@ Partial Class Menu
         PictureBox2 = New PictureBox()
         PictureBox1 = New PictureBox()
         Label1 = New Label()
+        PictureBox5 = New PictureBox()
+        Label6 = New Label()
         CType(PictureBox7, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         MenuStrip1.SuspendLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Button1
@@ -224,12 +227,36 @@ Partial Class Menu
         Label1.TabIndex = 21
         Label1.Text = "PRODUCTOS"
         ' 
+        ' PictureBox5
+        ' 
+        PictureBox5.BackColor = Color.WhiteSmoke
+        PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), Image)
+        PictureBox5.Location = New Point(185, 555)
+        PictureBox5.Name = "PictureBox5"
+        PictureBox5.Size = New Size(317, 311)
+        PictureBox5.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox5.TabIndex = 22
+        PictureBox5.TabStop = False
+        ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.BackColor = Color.WhiteSmoke
+        Label6.Font = New Font("Microsoft Sans Serif", 13.8F)
+        Label6.Location = New Point(229, 869)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(227, 29)
+        Label6.TabIndex = 23
+        Label6.Text = "CANCELAR VENTA"
+        ' 
         ' Menu
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.White
         ClientSize = New Size(1747, 1043)
+        Controls.Add(Label6)
+        Controls.Add(PictureBox5)
         Controls.Add(Label1)
         Controls.Add(Label2)
         Controls.Add(PictureBox2)
@@ -255,6 +282,7 @@ Partial Class Menu
         MenuStrip1.PerformLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -278,5 +306,7 @@ Partial Class Menu
     Friend WithEvents Label1 As Label
     Friend WithEvents CANCELARVENTAToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents USUARIOSToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents Label6 As Label
 
 End Class

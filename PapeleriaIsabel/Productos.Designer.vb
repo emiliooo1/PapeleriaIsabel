@@ -50,6 +50,7 @@ Partial Class Productos
         ' 
         ' dgvProductos
         ' 
+        dgvProductos.BackgroundColor = Color.WhiteSmoke
         dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         dgvProductos.Location = New Point(609, 218)
         dgvProductos.Name = "dgvProductos"

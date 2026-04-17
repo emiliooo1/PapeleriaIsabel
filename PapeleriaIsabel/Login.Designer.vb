@@ -27,9 +27,9 @@ Partial Class Login
         Label1 = New Label()
         Label2 = New Label()
         Button2 = New Button()
-        TextBox2 = New TextBox()
+        txtContrasena = New TextBox()
         Panel2 = New Panel()
-        TextBox1 = New TextBox()
+        txtUsuario = New TextBox()
         Panel1 = New Panel()
         Label3 = New Label()
         Panel2.SuspendLayout()
@@ -79,36 +79,36 @@ Partial Class Login
         Button2.Text = "Login"
         Button2.UseVisualStyleBackColor = False
         ' 
-        ' TextBox2
+        ' txtContrasena
         ' 
-        TextBox2.Font = New Font("MS Reference Sans Serif", 18F)
-        TextBox2.Location = New Point(3, 3)
-        TextBox2.Multiline = True
-        TextBox2.Name = "TextBox2"
-        TextBox2.PasswordChar = "*"c
-        TextBox2.Size = New Size(382, 57)
-        TextBox2.TabIndex = 1
+        txtContrasena.Font = New Font("MS Reference Sans Serif", 18F)
+        txtContrasena.Location = New Point(3, 3)
+        txtContrasena.Multiline = True
+        txtContrasena.Name = "txtContrasena"
+        txtContrasena.PasswordChar = "*"c
+        txtContrasena.Size = New Size(382, 57)
+        txtContrasena.TabIndex = 1
         ' 
         ' Panel2
         ' 
-        Panel2.Controls.Add(TextBox2)
+        Panel2.Controls.Add(txtContrasena)
         Panel2.Location = New Point(137, 329)
         Panel2.Name = "Panel2"
         Panel2.Size = New Size(388, 63)
         Panel2.TabIndex = 5
         ' 
-        ' TextBox1
+        ' txtUsuario
         ' 
-        TextBox1.Font = New Font("MS Reference Sans Serif", 18F)
-        TextBox1.Location = New Point(3, 3)
-        TextBox1.Multiline = True
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(382, 57)
-        TextBox1.TabIndex = 0
+        txtUsuario.Font = New Font("MS Reference Sans Serif", 18F)
+        txtUsuario.Location = New Point(3, 3)
+        txtUsuario.Multiline = True
+        txtUsuario.Name = "txtUsuario"
+        txtUsuario.Size = New Size(382, 57)
+        txtUsuario.TabIndex = 0
         ' 
         ' Panel1
         ' 
-        Panel1.Controls.Add(TextBox1)
+        Panel1.Controls.Add(txtUsuario)
         Panel1.Location = New Point(137, 203)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(388, 63)
@@ -157,9 +157,9 @@ Partial Class Login
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Button2 As Button
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtContrasena As TextBox
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtUsuario As TextBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label3 As Label
 
