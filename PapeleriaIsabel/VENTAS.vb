@@ -188,6 +188,11 @@ Public Class VENTAS
 
         End If
 
+        If dgvDetalle.Rows.Count = 0 Then
+            total = 0
+            lblTotal.Text = "Total: $0"
+        End If
+
         dgvDetalle.Rows.Remove(dgvDetalle.CurrentRow)
         calcularTotal()
 

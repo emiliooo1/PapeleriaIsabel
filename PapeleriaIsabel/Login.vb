@@ -23,7 +23,7 @@ Public Class Login
 
             dr.Close()
 
-            ' 🔥 ACTUALIZAR LOGIN
+            'ACTUALIZAR LOGIN
             Dim cmdUpdate As New MySqlCommand("
         UPDATE usuarios 
         SET ultimo_login = NOW() 
@@ -34,7 +34,7 @@ Public Class Login
 
             conexion.Close()
 
-            ' 🔥 CONTROL DE ACCESO
+            'CONTROL DE ACCESO
             If tipo = "Administrador" Then
 
                 Menu.Show()
@@ -69,4 +69,8 @@ Public Class Login
 
     End Sub
 
+
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.AcceptButton = Button2
+    End Sub
 End Class
