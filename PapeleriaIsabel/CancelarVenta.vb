@@ -143,7 +143,7 @@ Public Class CancelarVenta
 
     End Sub
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        Me.Close()
+        Me.Hide()
         Menu.Show()
 
     End Sub
@@ -157,5 +157,19 @@ Public Class CancelarVenta
         dgvDetalle.DefaultCellStyle.Font = New Font("Microsoft Sans Serif", 14)
         dgvDetalle.ColumnHeadersDefaultCellStyle.Font = New Font("Microsoft Sans Serif", 16, FontStyle.Bold)
         dgvDetalle.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+    End Sub
+
+    Private Sub Menu_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+
+        If e.CloseReason = CloseReason.UserClosing Then
+
+            If MessageBox.Show("¿Salir del sistema?", "Confirmar", MessageBoxButtons.YesNo) = DialogResult.No Then
+                e.Cancel = True
+            Else
+                Application.Exit()
+            End If
+
+        End If
+
     End Sub
 End Class

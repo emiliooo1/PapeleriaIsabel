@@ -153,8 +153,22 @@ Public Class Usuarios
 
     End Sub
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        Me.Close()
+        Me.Hide()
         Menu.Show()
+
+    End Sub
+
+    Private Sub Menu_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+
+        If e.CloseReason = CloseReason.UserClosing Then
+
+            If MessageBox.Show("¿Salir del sistema?", "Confirmar", MessageBoxButtons.YesNo) = DialogResult.No Then
+                e.Cancel = True
+            Else
+                Application.Exit()
+            End If
+
+        End If
 
     End Sub
 End Class

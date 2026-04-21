@@ -3,7 +3,7 @@ Imports MySql.Data.MySqlClient
 
 Public Class REPORTES
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        Me.Close()
+        Me.Hide()
         Menu.Show()
 
     End Sub
@@ -69,19 +69,33 @@ Public Class REPORTES
         Dim libro As Excel.Workbook = app.Workbooks.Add
         Dim hoja As Excel.Worksheet = libro.Sheets(1)
 
-        ' 🔥 ENCABEZADOS
+        'ENCABEZADOS
         For i As Integer = 0 To dgvReportes.Columns.Count - 1
             hoja.Cells(1, i + 1) = dgvReportes.Columns(i).HeaderText
         Next
 
-        ' 🔥 DATOS
+        'DATOS
         For i As Integer = 0 To dgvReportes.Rows.Count - 1
             For j As Integer = 0 To dgvReportes.Columns.Count - 1
                 hoja.Cells(i + 2, j + 1) = dgvReportes.Rows(i).Cells(j).Value
             Next
         Next
 
-        ' 🔥 MOSTRAR EXCEL
+        'MOSTRAR EXCEL
         app.Visible = True
+    End Sub
+
+    Private Sub Menu_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+
+        If e.CloseReason = CloseReason.UserClosing Then
+
+            If MessageBox.Show("¿Salir del sistema?", "Confirmar", MessageBoxButtons.YesNo) = DialogResult.No Then
+                e.Cancel = True
+            Else
+                Application.Exit()
+            End If
+
+        End If
+
     End Sub
 End Class

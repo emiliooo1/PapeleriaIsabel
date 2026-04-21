@@ -14,7 +14,7 @@ Public Class VENTAS
             Exit Sub
         End If
 
-        Close()
+        Me.Hide()
         Menu.Show()
     End Sub
 
@@ -285,8 +285,8 @@ Public Class VENTAS
     End Sub
     Private Sub Menu_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
 
-        If tipoUsuario = "Vendedor" Then
-            If e.CloseReason = CloseReason.UserClosing Then
+
+        If e.CloseReason = CloseReason.UserClosing Then
 
                 If MessageBox.Show("¿Salir del sistema?", "Confirmar", MessageBoxButtons.YesNo) = DialogResult.No Then
                     e.Cancel = True
@@ -295,7 +295,6 @@ Public Class VENTAS
                 End If
 
             End If
-        End If
 
 
     End Sub
