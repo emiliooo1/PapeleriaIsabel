@@ -48,6 +48,8 @@ Public Class Cobro
 
 
     Sub generarTicket(recibido As Decimal)
+        Dim subtotalSinIVA As Decimal = total / 1.08D
+        Dim iva As Decimal = total - subtotalSinIVA
 
         Try
             Dim ruta As String = "ticket.pdf"
@@ -65,9 +67,6 @@ Public Class Cobro
             Dim centro As New Paragraph("PAPELERIA ISABEL", negrita)
             centro.Alignment = Element.ALIGN_CENTER
             doc.Add(centro)
-
-            doc.Add(New Paragraph("Ensenada, B.C.", normal) With {.Alignment = Element.ALIGN_CENTER})
-            doc.Add(New Paragraph("Tel: 646-123-4567", normal) With {.Alignment = Element.ALIGN_CENTER})
 
             doc.Add(New Paragraph("-----------------------"))
 
@@ -101,9 +100,13 @@ Public Class Cobro
 
             doc.Add(New Paragraph("-----------------------"))
 
+            doc.Add(New Paragraph("SUBTOTAL: $" & subtotalSinIVA.ToString("0.00"), normal))
 
-            ' TOTALES
+            doc.Add(New Paragraph("IVA INCLUIDO 8%: $" & iva.ToString("0.00"), normal))
+
             doc.Add(New Paragraph("TOTAL: $" & total.ToString("0.00"), negrita))
+
+            doc.Add(New Paragraph("-----------------------"))
             doc.Add(New Paragraph("EFECTIVO: $" & recibido.ToString("0.00"), normal))
             doc.Add(New Paragraph("CAMBIO: $" & (recibido - total).ToString("0.00"), normal))
 
@@ -125,6 +128,6 @@ Public Class Cobro
 
     End Sub
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.AcceptButton = Button2
+        Me.AcceptButton = btnCobrar
     End Sub
 End Class

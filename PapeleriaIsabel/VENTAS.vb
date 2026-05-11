@@ -178,20 +178,25 @@ Public Class VENTAS
             Exit Sub
         End If
 
-        ' 🔥 GUARDAR Y OBTENER ID
+        ' GUARDAR VENTA Y OBTENER ID
         Dim idVenta As Integer = guardarVenta()
 
         Dim cobro As New Cobro
+
         cobro.total = total
         cobro.dgv = dgvDetalle
         cobro.vendedor = tipoUsuario
         cobro.idVenta = idVenta
 
-        cobro.ShowDialog()
+        If cobro.ShowDialog() = DialogResult.OK Then
 
-        dgvDetalle.Rows.Clear()
-        total = 0
-        lblTotal.Text = "Total: $0"
+            dgvDetalle.Rows.Clear()
+
+            total = 0
+
+            lblTotal.Text = "Total: $0"
+
+        End If
 
     End Sub
 
