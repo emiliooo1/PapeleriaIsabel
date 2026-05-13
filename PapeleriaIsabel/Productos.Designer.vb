@@ -54,6 +54,7 @@ Partial Class Productos
         dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         dgvProductos.Location = New Point(609, 218)
         dgvProductos.Name = "dgvProductos"
+        dgvProductos.ReadOnly = True
         dgvProductos.RowHeadersWidth = 51
         dgvProductos.Size = New Size(1087, 559)
         dgvProductos.TabIndex = 0
@@ -61,6 +62,7 @@ Partial Class Productos
         ' Label1
         ' 
         Label1.AutoSize = True
+        Label1.BackColor = Color.White
         Label1.Font = New Font("MS Reference Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label1.Location = New Point(609, 170)
         Label1.Name = "Label1"
@@ -71,6 +73,7 @@ Partial Class Productos
         ' Label2
         ' 
         Label2.AutoSize = True
+        Label2.BackColor = Color.White
         Label2.Font = New Font("MS Reference Sans Serif", 16.2F)
         Label2.Location = New Point(54, 309)
         Label2.Name = "Label2"
@@ -81,6 +84,7 @@ Partial Class Productos
         ' Label3
         ' 
         Label3.AutoSize = True
+        Label3.BackColor = Color.White
         Label3.Font = New Font("MS Reference Sans Serif", 16.2F)
         Label3.Location = New Point(49, 378)
         Label3.Name = "Label3"
@@ -91,6 +95,7 @@ Partial Class Productos
         ' Label4
         ' 
         Label4.AutoSize = True
+        Label4.BackColor = Color.White
         Label4.Font = New Font("MS Reference Sans Serif", 16.2F)
         Label4.Location = New Point(54, 524)
         Label4.Name = "Label4"
@@ -101,6 +106,7 @@ Partial Class Productos
         ' Label5
         ' 
         Label5.AutoSize = True
+        Label5.BackColor = Color.White
         Label5.Font = New Font("MS Reference Sans Serif", 16.2F)
         Label5.Location = New Point(50, 455)
         Label5.Name = "Label5"
@@ -111,6 +117,7 @@ Partial Class Productos
         ' Label6
         ' 
         Label6.AutoSize = True
+        Label6.BackColor = Color.White
         Label6.Font = New Font("MS Reference Sans Serif", 16.2F)
         Label6.Location = New Point(49, 591)
         Label6.Name = "Label6"
@@ -148,7 +155,7 @@ Partial Class Productos
         ' txtPrecio
         ' 
         txtPrecio.Font = New Font("MS Reference Sans Serif", 16.2F)
-        txtPrecio.Location = New Point(254, 583)
+        txtPrecio.Location = New Point(254, 521)
         txtPrecio.Multiline = True
         txtPrecio.Name = "txtPrecio"
         txtPrecio.Size = New Size(219, 43)
@@ -157,7 +164,7 @@ Partial Class Productos
         ' txtDescripcion
         ' 
         txtDescripcion.Font = New Font("MS Reference Sans Serif", 16.2F)
-        txtDescripcion.Location = New Point(254, 524)
+        txtDescripcion.Location = New Point(254, 581)
         txtDescripcion.Multiline = True
         txtDescripcion.Name = "txtDescripcion"
         txtDescripcion.Size = New Size(219, 45)
@@ -174,58 +181,63 @@ Partial Class Productos
         ' 
         ' PictureBox1
         ' 
-        PictureBox1.Image = My.Resources.Resources.download__1_
-        PictureBox1.Location = New Point(49, 887)
+        PictureBox1.BackColor = Color.White
+        PictureBox1.Image = My.Resources.Resources.regresar
+        PictureBox1.Location = New Point(49, 874)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(93, 95)
+        PictureBox1.Size = New Size(107, 108)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 13
         PictureBox1.TabStop = False
         ' 
         ' btnAgregar
         ' 
-        btnAgregar.Image = My.Resources.Resources.agregar
-        btnAgregar.Location = New Point(50, 94)
+        btnAgregar.BackColor = Color.White
+        btnAgregar.Image = My.Resources.Resources.botonagregarfondo
+        btnAgregar.Location = New Point(50, 68)
         btnAgregar.Name = "btnAgregar"
-        btnAgregar.Size = New Size(93, 95)
+        btnAgregar.Size = New Size(112, 121)
         btnAgregar.SizeMode = PictureBoxSizeMode.StretchImage
         btnAgregar.TabIndex = 14
         btnAgregar.TabStop = False
         ' 
         ' btnEditar
         ' 
+        btnEditar.BackColor = Color.White
         btnEditar.Image = My.Resources.Resources.editar
-        btnEditar.Location = New Point(192, 94)
+        btnEditar.Location = New Point(189, 68)
         btnEditar.Name = "btnEditar"
-        btnEditar.Size = New Size(93, 95)
+        btnEditar.Size = New Size(112, 121)
         btnEditar.SizeMode = PictureBoxSizeMode.StretchImage
         btnEditar.TabIndex = 15
         btnEditar.TabStop = False
         ' 
         ' btnEliminar
         ' 
-        btnEliminar.Image = My.Resources.Resources.borrar
-        btnEliminar.Location = New Point(351, 94)
+        btnEliminar.BackColor = Color.White
+        btnEliminar.Image = My.Resources.Resources.eliminarfondo
+        btnEliminar.Location = New Point(329, 68)
         btnEliminar.Name = "btnEliminar"
-        btnEliminar.Size = New Size(93, 95)
+        btnEliminar.Size = New Size(113, 121)
         btnEliminar.SizeMode = PictureBoxSizeMode.StretchImage
         btnEliminar.TabIndex = 16
         btnEliminar.TabStop = False
         ' 
         ' Button1
         ' 
+        Button1.BackColor = Color.White
         Button1.Enabled = False
         Button1.Location = New Point(21, 33)
         Button1.Name = "Button1"
         Button1.Size = New Size(1705, 976)
         Button1.TabIndex = 19
-        Button1.UseVisualStyleBackColor = True
+        Button1.UseVisualStyleBackColor = False
         ' 
         ' Productos
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.White
+        BackColor = Color.FromArgb(CByte(255), CByte(249), CByte(239))
         ClientSize = New Size(1747, 1043)
         Controls.Add(btnEliminar)
         Controls.Add(btnEditar)

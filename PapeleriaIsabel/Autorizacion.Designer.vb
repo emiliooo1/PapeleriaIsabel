@@ -37,10 +37,10 @@ Partial Class Autorizacion
         ' 
         Label3.AutoSize = True
         Label3.BackColor = Color.White
-        Label3.Font = New Font("MS Reference Sans Serif", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(194, 72)
+        Label3.Font = New Font("Microsoft YaHei", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label3.Location = New Point(179, 65)
         Label3.Name = "Label3"
-        Label3.Size = New Size(319, 42)
+        Label3.Size = New Size(329, 45)
         Label3.TabIndex = 14
         Label3.Text = "ADMINISTRADOR"
         ' 
@@ -48,10 +48,10 @@ Partial Class Autorizacion
         ' 
         Label2.AutoSize = True
         Label2.BackColor = Color.White
-        Label2.Font = New Font("MS Reference Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label2.Font = New Font("Microsoft YaHei", 18F)
         Label2.Location = New Point(84, 269)
         Label2.Name = "Label2"
-        Label2.Size = New Size(203, 38)
+        Label2.Size = New Size(186, 39)
         Label2.TabIndex = 12
         Label2.Text = "Contraseña:"
         ' 
@@ -59,10 +59,10 @@ Partial Class Autorizacion
         ' 
         Label1.AutoSize = True
         Label1.BackColor = Color.White
-        Label1.Font = New Font("MS Reference Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label1.Font = New Font("Microsoft YaHei", 18F)
         Label1.Location = New Point(84, 130)
         Label1.Name = "Label1"
-        Label1.Size = New Size(146, 38)
+        Label1.Size = New Size(133, 39)
         Label1.TabIndex = 11
         Label1.Text = "Usuario:"
         ' 
@@ -72,13 +72,13 @@ Partial Class Autorizacion
         Button1.Enabled = False
         Button1.Location = New Point(53, 28)
         Button1.Name = "Button1"
-        Button1.Size = New Size(571, 533)
+        Button1.Size = New Size(571, 483)
         Button1.TabIndex = 8
         Button1.UseVisualStyleBackColor = False
         ' 
         ' txtUsuario
         ' 
-        txtUsuario.Font = New Font("MS Reference Sans Serif", 18F)
+        txtUsuario.Font = New Font("Microsoft YaHei", 18F)
         txtUsuario.Location = New Point(145, 186)
         txtUsuario.Multiline = True
         txtUsuario.Name = "txtUsuario"
@@ -87,7 +87,7 @@ Partial Class Autorizacion
         ' 
         ' txtContrasena
         ' 
-        txtContrasena.Font = New Font("MS Reference Sans Serif", 18F)
+        txtContrasena.Font = New Font("Microsoft YaHei", 18F)
         txtContrasena.Location = New Point(145, 328)
         txtContrasena.Multiline = True
         txtContrasena.Name = "txtContrasena"
@@ -97,21 +97,23 @@ Partial Class Autorizacion
         ' 
         ' Button2
         ' 
-        Button2.BackColor = Color.PowderBlue
-        Button2.Font = New Font("MS Reference Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Button2.BackColor = Color.FromArgb(CByte(1), CByte(61), CByte(90))
+        Button2.Font = New Font("Microsoft YaHei", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button2.ForeColor = Color.White
         Button2.Location = New Point(72, 414)
         Button2.Name = "Button2"
-        Button2.Size = New Size(526, 66)
+        Button2.Size = New Size(526, 79)
         Button2.TabIndex = 13
-        Button2.Text = "Login"
+        Button2.Text = "LOGIN"
         Button2.UseVisualStyleBackColor = False
         ' 
         ' PictureBox1
         ' 
-        PictureBox1.Image = My.Resources.Resources.download__1_
-        PictureBox1.Location = New Point(72, 486)
+        PictureBox1.BackColor = Color.White
+        PictureBox1.Image = My.Resources.Resources.regresar
+        PictureBox1.Location = New Point(72, 52)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(63, 64)
+        PictureBox1.Size = New Size(71, 75)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 15
         PictureBox1.TabStop = False
@@ -120,8 +122,8 @@ Partial Class Autorizacion
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.White
-        ClientSize = New Size(669, 573)
+        BackColor = Color.FromArgb(CByte(255), CByte(249), CByte(239))
+        ClientSize = New Size(660, 542)
         Controls.Add(PictureBox1)
         Controls.Add(Label3)
         Controls.Add(Label2)

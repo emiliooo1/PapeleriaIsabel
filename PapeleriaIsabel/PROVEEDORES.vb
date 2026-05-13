@@ -37,7 +37,7 @@ Public Class PROVEEDORES
         End If
 
         Try
-            conexion.Open()
+            conexion.Open
 
             Dim cmd As New MySqlCommand("
             INSERT INTO proveedores(idProv, nombre, correo, telefono)
@@ -48,15 +48,15 @@ Public Class PROVEEDORES
             cmd.Parameters.AddWithValue("@c", txtCorreo.Text)
             cmd.Parameters.AddWithValue("@t", txtTelefono.Text)
 
-            cmd.ExecuteNonQuery()
-            conexion.Close()
+            cmd.ExecuteNonQuery
+            conexion.Close
 
             MessageBox.Show("Proveedor agregado")
-            cargarProveedores()
+            cargarProveedores
 
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
-            conexion.Close()
+            conexion.Close
         End Try
 
     End Sub
@@ -164,6 +164,10 @@ Public Class PROVEEDORES
             End If
 
         End If
+
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs)
 
     End Sub
 End Class

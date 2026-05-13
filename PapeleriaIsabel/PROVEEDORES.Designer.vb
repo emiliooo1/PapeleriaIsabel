@@ -48,40 +48,44 @@ Partial Class PROVEEDORES
         ' 
         ' btnEliminar
         ' 
-        btnEliminar.Image = My.Resources.Resources.borrar
-        btnEliminar.Location = New Point(329, 66)
+        btnEliminar.BackColor = Color.White
+        btnEliminar.Image = My.Resources.Resources.eliminarfondo
+        btnEliminar.Location = New Point(327, 66)
         btnEliminar.Name = "btnEliminar"
-        btnEliminar.Size = New Size(93, 95)
+        btnEliminar.Size = New Size(112, 121)
         btnEliminar.SizeMode = PictureBoxSizeMode.StretchImage
         btnEliminar.TabIndex = 33
         btnEliminar.TabStop = False
         ' 
         ' btnEditar
         ' 
+        btnEditar.BackColor = Color.White
         btnEditar.Image = My.Resources.Resources.editar
-        btnEditar.Location = New Point(181, 66)
+        btnEditar.Location = New Point(191, 66)
         btnEditar.Name = "btnEditar"
-        btnEditar.Size = New Size(93, 95)
+        btnEditar.Size = New Size(112, 121)
         btnEditar.SizeMode = PictureBoxSizeMode.StretchImage
         btnEditar.TabIndex = 32
         btnEditar.TabStop = False
         ' 
         ' btnAgregar
         ' 
-        btnAgregar.Image = My.Resources.Resources.agregar
+        btnAgregar.BackColor = Color.White
+        btnAgregar.Image = My.Resources.Resources.botonagregarfondo
         btnAgregar.Location = New Point(49, 66)
         btnAgregar.Name = "btnAgregar"
-        btnAgregar.Size = New Size(93, 95)
+        btnAgregar.Size = New Size(112, 121)
         btnAgregar.SizeMode = PictureBoxSizeMode.StretchImage
         btnAgregar.TabIndex = 31
         btnAgregar.TabStop = False
         ' 
         ' PictureBox1
         ' 
-        PictureBox1.Image = My.Resources.Resources.download__1_
-        PictureBox1.Location = New Point(49, 887)
+        PictureBox1.BackColor = Color.White
+        PictureBox1.Image = My.Resources.Resources.regresar
+        PictureBox1.Location = New Point(49, 878)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(93, 95)
+        PictureBox1.Size = New Size(99, 104)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 30
         PictureBox1.TabStop = False
@@ -89,28 +93,28 @@ Partial Class PROVEEDORES
         ' txtTelefono
         ' 
         txtTelefono.Font = New Font("MS Reference Sans Serif", 16.2F)
-        txtTelefono.Location = New Point(223, 548)
+        txtTelefono.Location = New Point(181, 548)
         txtTelefono.Multiline = True
         txtTelefono.Name = "txtTelefono"
-        txtTelefono.Size = New Size(216, 45)
+        txtTelefono.Size = New Size(422, 45)
         txtTelefono.TabIndex = 28
         ' 
         ' txtCorreo
         ' 
         txtCorreo.Font = New Font("MS Reference Sans Serif", 16.2F)
-        txtCorreo.Location = New Point(224, 481)
+        txtCorreo.Location = New Point(181, 481)
         txtCorreo.Multiline = True
         txtCorreo.Name = "txtCorreo"
-        txtCorreo.Size = New Size(215, 45)
+        txtCorreo.Size = New Size(422, 45)
         txtCorreo.TabIndex = 27
         ' 
         ' txtNombre
         ' 
         txtNombre.Font = New Font("MS Reference Sans Serif", 16.2F)
-        txtNombre.Location = New Point(224, 416)
+        txtNombre.Location = New Point(181, 416)
         txtNombre.Multiline = True
         txtNombre.Name = "txtNombre"
-        txtNombre.Size = New Size(215, 45)
+        txtNombre.Size = New Size(422, 45)
         txtNombre.TabIndex = 26
         ' 
         ' txtBuscar
@@ -125,17 +129,18 @@ Partial Class PROVEEDORES
         ' txtID
         ' 
         txtID.Font = New Font("MS Reference Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        txtID.Location = New Point(223, 357)
+        txtID.Location = New Point(181, 357)
         txtID.Multiline = True
         txtID.Name = "txtID"
-        txtID.Size = New Size(216, 45)
+        txtID.Size = New Size(422, 45)
         txtID.TabIndex = 24
         ' 
         ' Label6
         ' 
         Label6.AutoSize = True
+        Label6.BackColor = Color.White
         Label6.Font = New Font("MS Reference Sans Serif", 16.2F)
-        Label6.Location = New Point(49, 558)
+        Label6.Location = New Point(38, 558)
         Label6.Name = "Label6"
         Label6.Size = New Size(137, 35)
         Label6.TabIndex = 23
@@ -144,8 +149,9 @@ Partial Class PROVEEDORES
         ' Label4
         ' 
         Label4.AutoSize = True
+        Label4.BackColor = Color.White
         Label4.Font = New Font("MS Reference Sans Serif", 16.2F)
-        Label4.Location = New Point(49, 491)
+        Label4.Location = New Point(38, 491)
         Label4.Name = "Label4"
         Label4.Size = New Size(110, 35)
         Label4.TabIndex = 21
@@ -154,8 +160,9 @@ Partial Class PROVEEDORES
         ' Label3
         ' 
         Label3.AutoSize = True
+        Label3.BackColor = Color.White
         Label3.Font = New Font("MS Reference Sans Serif", 16.2F)
-        Label3.Location = New Point(49, 426)
+        Label3.Location = New Point(38, 426)
         Label3.Name = "Label3"
         Label3.Size = New Size(126, 35)
         Label3.TabIndex = 20
@@ -164,8 +171,9 @@ Partial Class PROVEEDORES
         ' Label2
         ' 
         Label2.AutoSize = True
+        Label2.BackColor = Color.White
         Label2.Font = New Font("MS Reference Sans Serif", 16.2F)
-        Label2.Location = New Point(49, 360)
+        Label2.Location = New Point(38, 360)
         Label2.Name = "Label2"
         Label2.Size = New Size(50, 35)
         Label2.TabIndex = 19
@@ -174,6 +182,7 @@ Partial Class PROVEEDORES
         ' Label1
         ' 
         Label1.AutoSize = True
+        Label1.BackColor = Color.White
         Label1.Font = New Font("MS Reference Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label1.Location = New Point(609, 177)
         Label1.Name = "Label1"
@@ -183,27 +192,30 @@ Partial Class PROVEEDORES
         ' 
         ' dgvProveedores
         ' 
+        dgvProveedores.BackgroundColor = Color.White
         dgvProveedores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         dgvProveedores.Location = New Point(609, 218)
         dgvProveedores.Name = "dgvProveedores"
+        dgvProveedores.ReadOnly = True
         dgvProveedores.RowHeadersWidth = 51
         dgvProveedores.Size = New Size(1087, 559)
         dgvProveedores.TabIndex = 17
         ' 
         ' Button1
         ' 
+        Button1.BackColor = Color.White
         Button1.Enabled = False
         Button1.Location = New Point(21, 33)
         Button1.Name = "Button1"
         Button1.Size = New Size(1705, 976)
         Button1.TabIndex = 34
-        Button1.UseVisualStyleBackColor = True
+        Button1.UseVisualStyleBackColor = False
         ' 
         ' PROVEEDORES
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.White
+        BackColor = Color.FromArgb(CByte(255), CByte(249), CByte(239))
         ClientSize = New Size(1747, 1043)
         Controls.Add(btnEliminar)
         Controls.Add(btnEditar)

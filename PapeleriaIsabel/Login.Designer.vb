@@ -27,13 +27,9 @@ Partial Class Login
         Label1 = New Label()
         Label2 = New Label()
         Button2 = New Button()
-        txtContrasena = New TextBox()
-        Panel2 = New Panel()
         txtUsuario = New TextBox()
-        Panel1 = New Panel()
         Label3 = New Label()
-        Panel2.SuspendLayout()
-        Panel1.SuspendLayout()
+        txtContrasena = New TextBox()
         SuspendLayout()
         ' 
         ' Button1
@@ -50,10 +46,10 @@ Partial Class Login
         ' 
         Label1.AutoSize = True
         Label1.BackColor = Color.White
-        Label1.Font = New Font("MS Reference Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label1.Font = New Font("Microsoft YaHei", 18F)
         Label1.Location = New Point(80, 146)
         Label1.Name = "Label1"
-        Label1.Size = New Size(146, 38)
+        Label1.Size = New Size(133, 39)
         Label1.TabIndex = 2
         Label1.Text = "Usuario:"
         ' 
@@ -61,80 +57,65 @@ Partial Class Login
         ' 
         Label2.AutoSize = True
         Label2.BackColor = Color.White
-        Label2.Font = New Font("MS Reference Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label2.Font = New Font("Microsoft YaHei", 18F)
         Label2.Location = New Point(80, 279)
         Label2.Name = "Label2"
-        Label2.Size = New Size(203, 38)
+        Label2.Size = New Size(186, 39)
         Label2.TabIndex = 3
         Label2.Text = "Contraseña:"
         ' 
         ' Button2
         ' 
-        Button2.BackColor = Color.PowderBlue
-        Button2.Font = New Font("MS Reference Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Button2.BackColor = Color.FromArgb(CByte(1), CByte(61), CByte(90))
+        Button2.Font = New Font("Microsoft YaHei", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button2.ForeColor = Color.White
         Button2.Location = New Point(73, 420)
         Button2.Name = "Button2"
         Button2.Size = New Size(526, 66)
         Button2.TabIndex = 6
-        Button2.Text = "Login"
+        Button2.Text = "LOGIN"
         Button2.UseVisualStyleBackColor = False
+        ' 
+        ' txtUsuario
+        ' 
+        txtUsuario.Font = New Font("Microsoft YaHei", 18F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        txtUsuario.Location = New Point(143, 201)
+        txtUsuario.Multiline = True
+        txtUsuario.Name = "txtUsuario"
+        txtUsuario.Size = New Size(382, 57)
+        txtUsuario.TabIndex = 0
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.BackColor = Color.White
+        Label3.Font = New Font("Microsoft YaHei", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label3.Location = New Point(249, 80)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(155, 52)
+        Label3.TabIndex = 7
+        Label3.Text = "LOGIN"
         ' 
         ' txtContrasena
         ' 
-        txtContrasena.Font = New Font("MS Reference Sans Serif", 18F)
-        txtContrasena.Location = New Point(3, 3)
+        txtContrasena.Font = New Font("Microsoft YaHei", 18F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        txtContrasena.Location = New Point(143, 333)
         txtContrasena.Multiline = True
         txtContrasena.Name = "txtContrasena"
         txtContrasena.PasswordChar = "*"c
         txtContrasena.Size = New Size(382, 57)
         txtContrasena.TabIndex = 1
         ' 
-        ' Panel2
-        ' 
-        Panel2.Controls.Add(txtContrasena)
-        Panel2.Location = New Point(137, 329)
-        Panel2.Name = "Panel2"
-        Panel2.Size = New Size(388, 63)
-        Panel2.TabIndex = 5
-        ' 
-        ' txtUsuario
-        ' 
-        txtUsuario.Font = New Font("MS Reference Sans Serif", 18F)
-        txtUsuario.Location = New Point(3, 3)
-        txtUsuario.Multiline = True
-        txtUsuario.Name = "txtUsuario"
-        txtUsuario.Size = New Size(382, 57)
-        txtUsuario.TabIndex = 0
-        ' 
-        ' Panel1
-        ' 
-        Panel1.Controls.Add(txtUsuario)
-        Panel1.Location = New Point(137, 203)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(388, 63)
-        Panel1.TabIndex = 4
-        ' 
-        ' Label3
-        ' 
-        Label3.AutoSize = True
-        Label3.BackColor = Color.White
-        Label3.Font = New Font("MS Reference Sans Serif", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(262, 81)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(130, 42)
-        Label3.TabIndex = 7
-        Label3.Text = "LOGIN"
-        ' 
         ' Login
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.White
+        BackColor = Color.FromArgb(CByte(255), CByte(249), CByte(239))
         ClientSize = New Size(669, 542)
+        Controls.Add(txtContrasena)
+        Controls.Add(txtUsuario)
         Controls.Add(Label3)
         Controls.Add(Button2)
-        Controls.Add(Panel2)
-        Controls.Add(Panel1)
         Controls.Add(Label2)
         Controls.Add(Label1)
         Controls.Add(Button1)
@@ -145,10 +126,6 @@ Partial Class Login
         ShowIcon = False
         ShowInTaskbar = False
         StartPosition = FormStartPosition.CenterScreen
-        Panel2.ResumeLayout(False)
-        Panel2.PerformLayout()
-        Panel1.ResumeLayout(False)
-        Panel1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -157,10 +134,8 @@ Partial Class Login
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Button2 As Button
-    Friend WithEvents txtContrasena As TextBox
-    Friend WithEvents Panel2 As Panel
     Friend WithEvents txtUsuario As TextBox
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents Label3 As Label
+    Friend WithEvents txtContrasena As TextBox
 
 End Class

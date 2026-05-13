@@ -52,6 +52,7 @@ Partial Class Usuarios
         ' 
         ' btnEliminar
         ' 
+        btnEliminar.BackColor = Color.White
         btnEliminar.Image = My.Resources.Resources.borrar
         btnEliminar.Location = New Point(361, 64)
         btnEliminar.Name = "btnEliminar"
@@ -62,6 +63,7 @@ Partial Class Usuarios
         ' 
         ' btnEditar
         ' 
+        btnEditar.BackColor = Color.White
         btnEditar.Image = My.Resources.Resources.editar
         btnEditar.Location = New Point(202, 64)
         btnEditar.Name = "btnEditar"
@@ -72,6 +74,7 @@ Partial Class Usuarios
         ' 
         ' btnAgregar
         ' 
+        btnAgregar.BackColor = Color.White
         btnAgregar.Image = My.Resources.Resources.agregar
         btnAgregar.Location = New Point(60, 64)
         btnAgregar.Name = "btnAgregar"
@@ -110,6 +113,7 @@ Partial Class Usuarios
         ' Label5
         ' 
         Label5.AutoSize = True
+        Label5.BackColor = Color.White
         Label5.Font = New Font("MS Reference Sans Serif", 16.2F)
         Label5.Location = New Point(60, 467)
         Label5.Name = "Label5"
@@ -120,6 +124,7 @@ Partial Class Usuarios
         ' Label3
         ' 
         Label3.AutoSize = True
+        Label3.BackColor = Color.White
         Label3.Font = New Font("MS Reference Sans Serif", 16.2F)
         Label3.Location = New Point(59, 390)
         Label3.Name = "Label3"
@@ -130,6 +135,7 @@ Partial Class Usuarios
         ' Label2
         ' 
         Label2.AutoSize = True
+        Label2.BackColor = Color.White
         Label2.Font = New Font("MS Reference Sans Serif", 16.2F)
         Label2.Location = New Point(64, 321)
         Label2.Name = "Label2"
@@ -149,6 +155,7 @@ Partial Class Usuarios
         ' 
         ' PictureBox1
         ' 
+        PictureBox1.BackColor = Color.White
         PictureBox1.Image = My.Resources.Resources.download__1_
         PictureBox1.Location = New Point(64, 892)
         PictureBox1.Name = "PictureBox1"
@@ -161,7 +168,7 @@ Partial Class Usuarios
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.White
+        BackColor = Color.FromArgb(CByte(255), CByte(249), CByte(239))
         ClientSize = New Size(1747, 1043)
         Controls.Add(PictureBox1)
         Controls.Add(dgvUsuarios)

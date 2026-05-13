@@ -36,12 +36,13 @@ Partial Class CancelarVenta
         ' 
         ' Button1
         ' 
+        Button1.BackColor = Color.White
         Button1.Enabled = False
         Button1.Location = New Point(21, 33)
         Button1.Name = "Button1"
         Button1.Size = New Size(1705, 976)
         Button1.TabIndex = 35
-        Button1.UseVisualStyleBackColor = True
+        Button1.UseVisualStyleBackColor = False
         ' 
         ' txtIdVenta
         ' 
@@ -55,8 +56,9 @@ Partial Class CancelarVenta
         ' Label3
         ' 
         Label3.AutoSize = True
+        Label3.BackColor = Color.White
         Label3.Font = New Font("MS Reference Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(90, 145)
+        Label3.Location = New Point(85, 138)
         Label3.Name = "Label3"
         Label3.Size = New Size(124, 35)
         Label3.TabIndex = 36
@@ -68,6 +70,7 @@ Partial Class CancelarVenta
         dgvDetalle.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         dgvDetalle.Location = New Point(61, 214)
         dgvDetalle.Name = "dgvDetalle"
+        dgvDetalle.ReadOnly = True
         dgvDetalle.RowHeadersWidth = 51
         dgvDetalle.Size = New Size(1625, 615)
         dgvDetalle.TabIndex = 38
@@ -75,20 +78,20 @@ Partial Class CancelarVenta
         ' PictureBox2
         ' 
         PictureBox2.BackColor = Color.WhiteSmoke
-        PictureBox2.Image = My.Resources.Resources.download__1_
-        PictureBox2.Location = New Point(49, 887)
+        PictureBox2.Image = My.Resources.Resources.regresar
+        PictureBox2.Location = New Point(49, 879)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(93, 95)
+        PictureBox2.Size = New Size(98, 103)
         PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox2.TabIndex = 39
         PictureBox2.TabStop = False
         ' 
         ' btnCancelarVenta
         ' 
-        btnCancelarVenta.Image = My.Resources.Resources.borrar
-        btnCancelarVenta.Location = New Point(1354, 85)
+        btnCancelarVenta.Image = My.Resources.Resources.eliminarfondo
+        btnCancelarVenta.Location = New Point(1246, 50)
         btnCancelarVenta.Name = "btnCancelarVenta"
-        btnCancelarVenta.Size = New Size(93, 95)
+        btnCancelarVenta.Size = New Size(140, 148)
         btnCancelarVenta.SizeMode = PictureBoxSizeMode.StretchImage
         btnCancelarVenta.TabIndex = 40
         btnCancelarVenta.TabStop = False
@@ -96,10 +99,11 @@ Partial Class CancelarVenta
         ' lblTotal
         ' 
         lblTotal.AutoSize = True
-        lblTotal.Font = New Font("MS Reference Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lblTotal.Location = New Point(771, 887)
+        lblTotal.BackColor = Color.White
+        lblTotal.Font = New Font("MS Reference Sans Serif", 36F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblTotal.Location = New Point(684, 879)
         lblTotal.Name = "lblTotal"
-        lblTotal.Size = New Size(209, 49)
+        lblTotal.Size = New Size(321, 74)
         lblTotal.TabIndex = 41
         lblTotal.Text = "TOTAL: $"
         ' 
@@ -107,7 +111,7 @@ Partial Class CancelarVenta
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.White
+        BackColor = Color.FromArgb(CByte(255), CByte(249), CByte(239))
         ClientSize = New Size(1747, 1043)
         Controls.Add(lblTotal)
         Controls.Add(btnCancelarVenta)

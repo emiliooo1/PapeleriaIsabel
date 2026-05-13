@@ -34,10 +34,10 @@ Partial Class Cobro
         ' 
         lblTotal.AutoSize = True
         lblTotal.BackColor = Color.White
-        lblTotal.Font = New Font("MS Reference Sans Serif", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lblTotal.Location = New Point(205, 96)
+        lblTotal.Font = New Font("MS Reference Sans Serif", 28.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblTotal.Location = New Point(162, 95)
         lblTotal.Name = "lblTotal"
-        lblTotal.Size = New Size(256, 42)
+        lblTotal.Size = New Size(365, 59)
         lblTotal.TabIndex = 14
         lblTotal.Text = "TOTAL: $0.00"
         ' 
@@ -46,7 +46,7 @@ Partial Class Cobro
         lblCambio.AutoSize = True
         lblCambio.BackColor = Color.White
         lblCambio.Font = New Font("MS Reference Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lblCambio.Location = New Point(205, 344)
+        lblCambio.Location = New Point(209, 344)
         lblCambio.Name = "lblCambio"
         lblCambio.Size = New Size(240, 38)
         lblCambio.TabIndex = 10
@@ -57,7 +57,7 @@ Partial Class Cobro
         lblRecibido.AutoSize = True
         lblRecibido.BackColor = Color.White
         lblRecibido.Font = New Font("MS Reference Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lblRecibido.Location = New Point(73, 192)
+        lblRecibido.Location = New Point(145, 215)
         lblRecibido.Name = "lblRecibido"
         lblRecibido.Size = New Size(186, 38)
         lblRecibido.TabIndex = 9
@@ -75,8 +75,9 @@ Partial Class Cobro
         ' 
         ' btnCobrar
         ' 
-        btnCobrar.BackColor = Color.PowderBlue
+        btnCobrar.BackColor = Color.FromArgb(CByte(1), CByte(61), CByte(90))
         btnCobrar.Font = New Font("MS Reference Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnCobrar.ForeColor = Color.White
         btnCobrar.Location = New Point(63, 414)
         btnCobrar.Name = "btnCobrar"
         btnCobrar.Size = New Size(542, 77)
@@ -87,7 +88,7 @@ Partial Class Cobro
         ' txtRecibido
         ' 
         txtRecibido.Font = New Font("MS Reference Sans Serif", 18F)
-        txtRecibido.Location = New Point(144, 243)
+        txtRecibido.Location = New Point(145, 256)
         txtRecibido.Multiline = True
         txtRecibido.Name = "txtRecibido"
         txtRecibido.Size = New Size(382, 57)
@@ -97,7 +98,7 @@ Partial Class Cobro
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.White
+        BackColor = Color.FromArgb(CByte(255), CByte(249), CByte(239))
         ClientSize = New Size(669, 542)
         Controls.Add(txtRecibido)
         Controls.Add(btnCobrar)

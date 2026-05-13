@@ -23,9 +23,6 @@ Partial Class Menu
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Menu))
-        PictureBox7 = New PictureBox()
-        PictureBox4 = New PictureBox()
-        PictureBox3 = New PictureBox()
         MenuStrip1 = New MenuStrip()
         PRODUCTOSToolStripMenuItem = New ToolStripMenuItem()
         PROOVEDORESToolStripMenuItem = New ToolStripMenuItem()
@@ -34,234 +31,239 @@ Partial Class Menu
         REPORTESToolStripMenuItem = New ToolStripMenuItem()
         CANCELARVENTAToolStripMenuItem = New ToolStripMenuItem()
         USUARIOSToolStripMenuItem = New ToolStripMenuItem()
-        Label3 = New Label()
-        Label4 = New Label()
-        Label5 = New Label()
-        Label2 = New Label()
-        PictureBox2 = New PictureBox()
-        PictureBox1 = New PictureBox()
-        Label1 = New Label()
-        PictureBox5 = New PictureBox()
-        Label6 = New Label()
         Button1 = New Button()
-        CType(PictureBox7, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
+        Label5 = New Label()
+        PictureBox7 = New PictureBox()
+        Label3 = New Label()
+        PictureBox3 = New PictureBox()
+        Label6 = New Label()
+        PictureBox5 = New PictureBox()
+        Label4 = New Label()
+        PictureBox4 = New PictureBox()
+        Label2 = New Label()
+        Label1 = New Label()
+        PictureBox1 = New PictureBox()
+        PictureBox2 = New PictureBox()
         MenuStrip1.SuspendLayout()
-        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox7, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
-        ' 
-        ' PictureBox7
-        ' 
-        PictureBox7.BackColor = Color.WhiteSmoke
-        PictureBox7.Image = My.Resources.Resources.Screenshot_2026_03_21_143151_removebg_preview
-        PictureBox7.Location = New Point(1139, 416)
-        PictureBox7.Margin = New Padding(3, 2, 3, 2)
-        PictureBox7.Name = "PictureBox7"
-        PictureBox7.Size = New Size(263, 233)
-        PictureBox7.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox7.TabIndex = 10
-        PictureBox7.TabStop = False
-        ' 
-        ' PictureBox4
-        ' 
-        PictureBox4.BackColor = Color.WhiteSmoke
-        PictureBox4.Image = My.Resources.Resources._57385c35_2863_4074_8e21_14815323dc88_removebg_preview
-        PictureBox4.Location = New Point(626, 416)
-        PictureBox4.Margin = New Padding(3, 2, 3, 2)
-        PictureBox4.Name = "PictureBox4"
-        PictureBox4.Size = New Size(263, 233)
-        PictureBox4.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox4.TabIndex = 9
-        PictureBox4.TabStop = False
-        ' 
-        ' PictureBox3
-        ' 
-        PictureBox3.BackColor = Color.WhiteSmoke
-        PictureBox3.Image = My.Resources.Resources._840f21a1_504b_4a0e_af6c_785ea1baedf3_removebg_preview
-        PictureBox3.Location = New Point(1139, 83)
-        PictureBox3.Margin = New Padding(3, 2, 3, 2)
-        PictureBox3.Name = "PictureBox3"
-        PictureBox3.Size = New Size(263, 233)
-        PictureBox3.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox3.TabIndex = 8
-        PictureBox3.TabStop = False
         ' 
         ' MenuStrip1
         ' 
-        MenuStrip1.BackColor = SystemColors.ButtonFace
-        MenuStrip1.Font = New Font("MS Reference Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        MenuStrip1.BackColor = Color.FromArgb(CByte(1), CByte(61), CByte(90))
+        MenuStrip1.Font = New Font("MS Reference Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         MenuStrip1.ImageScalingSize = New Size(20, 20)
         MenuStrip1.Items.AddRange(New ToolStripItem() {PRODUCTOSToolStripMenuItem, PROOVEDORESToolStripMenuItem, VENTASToolStripMenuItem, INVENTARIOToolStripMenuItem, REPORTESToolStripMenuItem, CANCELARVENTAToolStripMenuItem, USUARIOSToolStripMenuItem})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Padding = New Padding(5, 2, 0, 2)
-        MenuStrip1.Size = New Size(1529, 28)
+        MenuStrip1.Padding = New Padding(6, 3, 0, 3)
+        MenuStrip1.Size = New Size(1747, 45)
         MenuStrip1.TabIndex = 11
         MenuStrip1.Text = "MenuStrip1"
         ' 
         ' PRODUCTOSToolStripMenuItem
         ' 
+        PRODUCTOSToolStripMenuItem.Font = New Font("MS Reference Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        PRODUCTOSToolStripMenuItem.ForeColor = SystemColors.ButtonHighlight
         PRODUCTOSToolStripMenuItem.Name = "PRODUCTOSToolStripMenuItem"
-        PRODUCTOSToolStripMenuItem.Size = New Size(123, 24)
+        PRODUCTOSToolStripMenuItem.Size = New Size(182, 39)
         PRODUCTOSToolStripMenuItem.Text = "PRODUCTOS"
         ' 
         ' PROOVEDORESToolStripMenuItem
         ' 
+        PROOVEDORESToolStripMenuItem.ForeColor = SystemColors.ButtonHighlight
         PROOVEDORESToolStripMenuItem.Name = "PROOVEDORESToolStripMenuItem"
-        PROOVEDORESToolStripMenuItem.Size = New Size(142, 24)
+        PROOVEDORESToolStripMenuItem.Size = New Size(253, 39)
         PROOVEDORESToolStripMenuItem.Text = "PROVEEDORES"
         ' 
         ' VENTASToolStripMenuItem
         ' 
+        VENTASToolStripMenuItem.ForeColor = SystemColors.ButtonHighlight
         VENTASToolStripMenuItem.Name = "VENTASToolStripMenuItem"
-        VENTASToolStripMenuItem.Size = New Size(85, 24)
+        VENTASToolStripMenuItem.Size = New Size(148, 39)
         VENTASToolStripMenuItem.Text = "VENTAS"
         ' 
         ' INVENTARIOToolStripMenuItem
         ' 
+        INVENTARIOToolStripMenuItem.ForeColor = SystemColors.ButtonHighlight
         INVENTARIOToolStripMenuItem.Name = "INVENTARIOToolStripMenuItem"
-        INVENTARIOToolStripMenuItem.Size = New Size(125, 24)
+        INVENTARIOToolStripMenuItem.Size = New Size(221, 39)
         INVENTARIOToolStripMenuItem.Text = "INVENTARIO"
         ' 
         ' REPORTESToolStripMenuItem
         ' 
+        REPORTESToolStripMenuItem.ForeColor = SystemColors.ButtonHighlight
         REPORTESToolStripMenuItem.Name = "REPORTESToolStripMenuItem"
-        REPORTESToolStripMenuItem.Size = New Size(106, 24)
+        REPORTESToolStripMenuItem.Size = New Size(186, 39)
         REPORTESToolStripMenuItem.Text = "REPORTES"
         ' 
         ' CANCELARVENTAToolStripMenuItem
         ' 
+        CANCELARVENTAToolStripMenuItem.ForeColor = SystemColors.ButtonHighlight
         CANCELARVENTAToolStripMenuItem.Name = "CANCELARVENTAToolStripMenuItem"
-        CANCELARVENTAToolStripMenuItem.Size = New Size(167, 24)
+        CANCELARVENTAToolStripMenuItem.Size = New Size(299, 39)
         CANCELARVENTAToolStripMenuItem.Text = "CANCELAR VENTA"
         ' 
         ' USUARIOSToolStripMenuItem
         ' 
+        USUARIOSToolStripMenuItem.ForeColor = SystemColors.ButtonHighlight
         USUARIOSToolStripMenuItem.Name = "USUARIOSToolStripMenuItem"
-        USUARIOSToolStripMenuItem.Size = New Size(107, 24)
+        USUARIOSToolStripMenuItem.Size = New Size(190, 39)
         USUARIOSToolStripMenuItem.Text = "USUARIOS"
         ' 
-        ' Label3
+        ' Button1
         ' 
-        Label3.AutoSize = True
-        Label3.BackColor = Color.WhiteSmoke
-        Label3.Font = New Font("Microsoft Sans Serif", 13.8F)
-        Label3.Location = New Point(1230, 319)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(87, 24)
-        Label3.TabIndex = 14
-        Label3.Text = "VENTAS"
-        ' 
-        ' Label4
-        ' 
-        Label4.AutoSize = True
-        Label4.BackColor = Color.WhiteSmoke
-        Label4.Font = New Font("Microsoft Sans Serif", 13.8F)
-        Label4.Location = New Point(683, 652)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(125, 24)
-        Label4.TabIndex = 15
-        Label4.Text = "INVENTARIO"
+        Button1.BackColor = Color.White
+        Button1.Enabled = False
+        Button1.Location = New Point(21, 71)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(1705, 924)
+        Button1.TabIndex = 36
+        Button1.UseVisualStyleBackColor = False
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.BackColor = Color.WhiteSmoke
-        Label5.Font = New Font("Microsoft Sans Serif", 13.8F)
-        Label5.Location = New Point(1213, 652)
+        Label5.BackColor = Color.White
+        Label5.Font = New Font("Microsoft YaHei", 19.8000011F, FontStyle.Bold)
+        Label5.Location = New Point(1357, 869)
         Label5.Name = "Label5"
-        Label5.Size = New Size(113, 24)
+        Label5.Size = New Size(197, 45)
         Label5.TabIndex = 16
         Label5.Text = "REPORTES"
         ' 
-        ' Label2
+        ' PictureBox7
         ' 
-        Label2.AutoSize = True
-        Label2.BackColor = Color.WhiteSmoke
-        Label2.Font = New Font("Microsoft Sans Serif", 13.8F)
-        Label2.Location = New Point(672, 319)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(155, 24)
-        Label2.TabIndex = 20
-        Label2.Text = "PROVEEDORES"
+        PictureBox7.BackColor = Color.WhiteSmoke
+        PictureBox7.Image = My.Resources.Resources.reportes
+        PictureBox7.Location = New Point(1302, 544)
+        PictureBox7.Name = "PictureBox7"
+        PictureBox7.Size = New Size(295, 322)
+        PictureBox7.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox7.TabIndex = 10
+        PictureBox7.TabStop = False
         ' 
-        ' PictureBox2
+        ' Label3
         ' 
-        PictureBox2.BackColor = Color.WhiteSmoke
-        PictureBox2.Image = My.Resources.Resources.b77b9b46_356d_46c2_82a8_939d497abf52_removebg_preview
-        PictureBox2.Location = New Point(626, 83)
-        PictureBox2.Margin = New Padding(3, 2, 3, 2)
-        PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(263, 233)
-        PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox2.TabIndex = 18
-        PictureBox2.TabStop = False
+        Label3.AutoSize = True
+        Label3.BackColor = Color.White
+        Label3.Font = New Font("Microsoft YaHei", 19.8000011F, FontStyle.Bold)
+        Label3.Location = New Point(1378, 425)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(159, 45)
+        Label3.TabIndex = 14
+        Label3.Text = "VENTAS"
         ' 
-        ' PictureBox1
+        ' PictureBox3
         ' 
-        PictureBox1.BackColor = Color.WhiteSmoke
-        PictureBox1.Image = My.Resources.Resources._0bca20a1_0cf6_4d93_bb90_5de8019c6549_removebg_preview
-        PictureBox1.Location = New Point(162, 83)
-        PictureBox1.Margin = New Padding(3, 2, 3, 2)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(277, 233)
-        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox1.TabIndex = 17
-        PictureBox1.TabStop = False
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.BackColor = Color.WhiteSmoke
-        Label1.Font = New Font("Microsoft Sans Serif", 13.8F)
-        Label1.Location = New Point(228, 319)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(128, 24)
-        Label1.TabIndex = 21
-        Label1.Text = "PRODUCTOS"
-        ' 
-        ' PictureBox5
-        ' 
-        PictureBox5.BackColor = Color.WhiteSmoke
-        PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), Image)
-        PictureBox5.Location = New Point(162, 416)
-        PictureBox5.Margin = New Padding(3, 2, 3, 2)
-        PictureBox5.Name = "PictureBox5"
-        PictureBox5.Size = New Size(277, 233)
-        PictureBox5.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox5.TabIndex = 22
-        PictureBox5.TabStop = False
+        PictureBox3.BackColor = Color.WhiteSmoke
+        PictureBox3.Image = My.Resources.Resources.ventas
+        PictureBox3.Location = New Point(1302, 100)
+        PictureBox3.Name = "PictureBox3"
+        PictureBox3.Size = New Size(295, 322)
+        PictureBox3.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox3.TabIndex = 8
+        PictureBox3.TabStop = False
         ' 
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.BackColor = Color.WhiteSmoke
-        Label6.Font = New Font("Microsoft Sans Serif", 13.8F)
-        Label6.Location = New Point(200, 652)
+        Label6.BackColor = Color.White
+        Label6.Font = New Font("Microsoft YaHei", 19.8000011F, FontStyle.Bold)
+        Label6.Location = New Point(207, 869)
         Label6.Name = "Label6"
-        Label6.Size = New Size(182, 24)
+        Label6.Size = New Size(338, 45)
         Label6.TabIndex = 23
         Label6.Text = "CANCELAR VENTA"
         ' 
-        ' Button1
+        ' PictureBox5
         ' 
-        Button1.Enabled = False
-        Button1.Location = New Point(18, 53)
-        Button1.Margin = New Padding(3, 2, 3, 2)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(1492, 693)
-        Button1.TabIndex = 36
-        Button1.UseVisualStyleBackColor = True
+        PictureBox5.BackColor = Color.WhiteSmoke
+        PictureBox5.Image = My.Resources.Resources.cancelarV
+        PictureBox5.Location = New Point(207, 544)
+        PictureBox5.Name = "PictureBox5"
+        PictureBox5.Size = New Size(295, 322)
+        PictureBox5.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox5.TabIndex = 22
+        PictureBox5.TabStop = False
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.BackColor = Color.White
+        Label4.Font = New Font("Microsoft YaHei", 19.8000011F, FontStyle.Bold)
+        Label4.Location = New Point(784, 869)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(242, 45)
+        Label4.TabIndex = 15
+        Label4.Text = "INVENTARIO"
+        ' 
+        ' PictureBox4
+        ' 
+        PictureBox4.BackColor = Color.WhiteSmoke
+        PictureBox4.Image = My.Resources.Resources.inventario
+        PictureBox4.Location = New Point(741, 544)
+        PictureBox4.Name = "PictureBox4"
+        PictureBox4.Size = New Size(295, 322)
+        PictureBox4.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox4.TabIndex = 9
+        PictureBox4.TabStop = False
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.BackColor = Color.White
+        Label2.Font = New Font("Microsoft YaHei", 19.8000011F, FontStyle.Bold)
+        Label2.Location = New Point(773, 425)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(274, 45)
+        Label2.TabIndex = 20
+        Label2.Text = "PROVEEDORES"
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.BackColor = Color.White
+        Label1.Font = New Font("Microsoft YaHei", 19.8000011F, FontStyle.Bold)
+        Label1.Location = New Point(240, 425)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(239, 45)
+        Label1.TabIndex = 21
+        Label1.Text = "PRODUCTOS"
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.BackColor = Color.WhiteSmoke
+        PictureBox1.Image = My.Resources.Resources.productos
+        PictureBox1.Location = New Point(207, 100)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(295, 322)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox1.TabIndex = 17
+        PictureBox1.TabStop = False
+        ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.BackColor = Color.WhiteSmoke
+        PictureBox2.Image = My.Resources.Resources.proveedores
+        PictureBox2.Location = New Point(741, 100)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(295, 322)
+        PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox2.TabIndex = 18
+        PictureBox2.TabStop = False
         ' 
         ' Menu
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.White
-        ClientSize = New Size(1529, 782)
+        BackColor = Color.FromArgb(CByte(255), CByte(249), CByte(239))
+        ClientSize = New Size(1747, 1043)
         Controls.Add(Label6)
         Controls.Add(PictureBox5)
         Controls.Add(Label1)
@@ -278,42 +280,41 @@ Partial Class Menu
         Controls.Add(Button1)
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
         MainMenuStrip = MenuStrip1
-        Margin = New Padding(3, 2, 3, 2)
         MinimizeBox = False
         Name = "Menu"
         StartPosition = FormStartPosition.Manual
         Text = "MENU"
-        CType(PictureBox7, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()
-        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox7, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
-    Friend WithEvents PictureBox7 As PictureBox
-    Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents PRODUCTOSToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PROOVEDORESToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VENTASToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents INVENTARIOToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents REPORTESToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Label1 As Label
     Friend WithEvents CANCELARVENTAToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents USUARIOSToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PictureBox5 As PictureBox
-    Friend WithEvents Label6 As Label
     Friend WithEvents Button1 As Button
+    Friend WithEvents Label5 As Label
+    Friend WithEvents PictureBox7 As PictureBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
 
 End Class

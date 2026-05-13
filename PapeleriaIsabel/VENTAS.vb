@@ -2,56 +2,56 @@
 
 Public Class VENTAS
 
-        Public tipoUsuario As String
+    Public tipoUsuario As String
 
-        Dim conexion As New MySqlConnection("server=localhost;user id=root;password=1234567890;database=papeleria")
-        Dim total As Decimal = 0
+    Dim conexion As New MySqlConnection("server=localhost;user id=root;password=1234567890;database=papeleria")
+    Dim total As Decimal = 0
 
-        Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
 
-            If tipoUsuario = "Vendedor" Then
-                MessageBox.Show("No tienes permiso para regresar al menú")
-                Exit Sub
-            End If
+        If tipoUsuario = "Vendedor" Then
+            MessageBox.Show("No tienes permiso para regresar al menú")
+            Exit Sub
+        End If
 
-            Me.Hide()
-            Menu.Show()
+        Me.Hide()
+        Menu.Show()
 
-        End Sub
-
-
-        Sub cargarProductos()
-
-            Dim dt As New DataTable
-            Dim da As New MySqlDataAdapter("SELECT idProd, nombre, precio FROM productos", conexion)
-
-            da.Fill(dt)
-
-            cmbProducto.DataSource = dt
-            cmbProducto.DisplayMember = "nombre"
-            cmbProducto.ValueMember = "idProd"
-
-        End Sub
+    End Sub
 
 
-        Private Sub Ventas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Sub cargarProductos()
 
-            cargarProductos()
+        Dim dt As New DataTable
+        Dim da As New MySqlDataAdapter("SELECT idProd, nombre, precio FROM productos", conexion)
 
-            If tipoUsuario = "Vendedor" Then
-                PictureBox1.Visible = False
-            End If
+        da.Fill(dt)
 
-            dgvDetalle.Columns.Clear()
-            dgvDetalle.Columns.Add("idProd", "ID")
-            dgvDetalle.Columns.Add("producto", "Producto")
-            dgvDetalle.Columns.Add("precio", "Precio")
-            dgvDetalle.Columns.Add("cantidad", "Cantidad")
-            dgvDetalle.Columns.Add("subtotal", "Subtotal")
+        cmbProducto.DataSource = dt
+        cmbProducto.DisplayMember = "nombre"
+        cmbProducto.ValueMember = "idProd"
 
-            dgvDetalle.AllowUserToAddRows = False
+    End Sub
 
-            lblTotal.Text = "Total: $0"
+
+    Private Sub Ventas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        cargarProductos()
+
+        If tipoUsuario = "Vendedor" Then
+            PictureBox1.Visible = False
+        End If
+
+        dgvDetalle.Columns.Clear()
+        dgvDetalle.Columns.Add("idProd", "ID")
+        dgvDetalle.Columns.Add("producto", "Producto")
+        dgvDetalle.Columns.Add("precio", "Precio")
+        dgvDetalle.Columns.Add("cantidad", "Cantidad")
+        dgvDetalle.Columns.Add("subtotal", "Subtotal")
+
+        dgvDetalle.AllowUserToAddRows = False
+
+        lblTotal.Text = "Total: $0"
         numCantidad.Value = 1
 
         dgvDetalle.DefaultCellStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 14)
@@ -63,95 +63,95 @@ Public Class VENTAS
     End Sub
 
 
-        Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs)
 
-            If numCantidad.Value <= 0 Then
-                MessageBox.Show("Cantidad inválida")
-                Exit Sub
-            End If
+        If numCantidad.Value <= 0 Then
+            MessageBox.Show("Cantidad inválida")
+            Exit Sub
+        End If
 
-            Dim cantidad As Integer = numCantidad.Value
-            Dim precio As Decimal
-            Dim idProd As Integer = cmbProducto.SelectedValue
+        Dim cantidad As Integer = numCantidad.Value
+        Dim precio As Decimal
+        Dim idProd As Integer = cmbProducto.SelectedValue
 
-            Dim fila As DataRowView = cmbProducto.SelectedItem
-            precio = fila("precio")
+        Dim fila As DataRowView = cmbProducto.SelectedItem
+        precio = fila("precio")
 
-            Dim cmdStock As New MySqlCommand("SELECT stock FROM inventario WHERE idProd=@id", conexion)
-            cmdStock.Parameters.AddWithValue("@id", idProd)
+        Dim cmdStock As New MySqlCommand("SELECT stock FROM inventario WHERE idProd=@id", conexion)
+        cmdStock.Parameters.AddWithValue("@id", idProd)
 
-            conexion.Open()
-            Dim stockActual As Integer = Convert.ToInt32(cmdStock.ExecuteScalar())
-            conexion.Close()
+        conexion.Open()
+        Dim stockActual = Convert.ToInt32(cmdStock.ExecuteScalar)
+        conexion.Close()
 
-            For Each filaGrid As DataGridViewRow In dgvDetalle.Rows
+        For Each filaGrid As DataGridViewRow In dgvDetalle.Rows
 
-                If filaGrid.Cells(0).Value = idProd Then
+            If filaGrid.Cells(0).Value = idProd Then
 
-                    Dim nuevaCantidad As Integer = filaGrid.Cells(3).Value + cantidad
+                Dim nuevaCantidad As Integer = filaGrid.Cells(3).Value + cantidad
 
-                    If nuevaCantidad > stockActual Then
-                        MessageBox.Show("No hay suficiente stock")
-                        Exit Sub
-                    End If
-
-                    filaGrid.Cells(3).Value = nuevaCantidad
-                    filaGrid.Cells(4).Value = precio * nuevaCantidad
-
-                    calcularTotal()
-                    numCantidad.Value = 1
+                If nuevaCantidad > stockActual Then
+                    MessageBox.Show("No hay suficiente stock")
                     Exit Sub
                 End If
 
-            Next
+                filaGrid.Cells(3).Value = nuevaCantidad
+                filaGrid.Cells(4).Value = precio * nuevaCantidad
 
-            If cantidad > stockActual Then
-                MessageBox.Show("No hay suficiente stock")
+                calcularTotal()
+                numCantidad.Value = 1
                 Exit Sub
             End If
 
-            dgvDetalle.Rows.Add(idProd, cmbProducto.Text, precio, cantidad, precio * cantidad)
+        Next
 
-            calcularTotal()
-            numCantidad.Value = 1
+        If cantidad > stockActual Then
+            MessageBox.Show("No hay suficiente stock")
+            Exit Sub
+        End If
 
-        End Sub
+        dgvDetalle.Rows.Add(idProd, cmbProducto.Text, precio, cantidad, precio * cantidad)
 
+        calcularTotal()
+        numCantidad.Value = 1
 
-        Sub calcularTotal()
-
-            total = 0
-
-            For Each fila As DataGridViewRow In dgvDetalle.Rows
-                total += Convert.ToDecimal(fila.Cells(4).Value)
-            Next
-
-            lblTotal.Text = "Total: $" & total
-
-        End Sub
+    End Sub
 
 
-        Function validarAdmin(usuario As String, password As String) As Boolean
+    Sub calcularTotal()
 
-            Dim cmd As New MySqlCommand("
+        total = 0
+
+        For Each fila As DataGridViewRow In dgvDetalle.Rows
+            total += Convert.ToDecimal(fila.Cells(4).Value)
+        Next
+
+        lblTotal.Text = "Total: $" & total
+
+    End Sub
+
+
+    Function validarAdmin(usuario As String, password As String) As Boolean
+
+        Dim cmd As New MySqlCommand("
         SELECT COUNT(*) FROM usuarios 
         WHERE usuario=@user AND contrasena=@pass AND tipo='Administrador'", conexion)
 
-            cmd.Parameters.AddWithValue("@user", usuario)
-            cmd.Parameters.AddWithValue("@pass", password)
+        cmd.Parameters.AddWithValue("@user", usuario)
+        cmd.Parameters.AddWithValue("@pass", password)
 
-            conexion.Open()
-            Dim count As Integer = Convert.ToInt32(cmd.ExecuteScalar())
-            conexion.Close()
+        conexion.Open()
+        Dim count As Integer = Convert.ToInt32(cmd.ExecuteScalar())
+        conexion.Close()
 
-            Return count > 0
+        Return count > 0
 
-        End Function
+    End Function
 
 
-        Private Sub btnEliminarProducto_Click(sender As Object, e As EventArgs) Handles btnEliminarProducto.Click
+    Private Sub btnEliminarProducto_Click(sender As Object, e As EventArgs) Handles btnEliminarProducto.Click
 
-            If dgvDetalle.CurrentRow Is Nothing Then Exit Sub
+        If dgvDetalle.CurrentRow Is Nothing Then Exit Sub
 
         If tipoUsuario = "Vendedor" Then
 
@@ -165,10 +165,10 @@ Public Class VENTAS
 
         End If
 
-            dgvDetalle.Rows.Remove(dgvDetalle.CurrentRow)
-            calcularTotal()
+        dgvDetalle.Rows.Remove(dgvDetalle.CurrentRow)
+        calcularTotal()
 
-        End Sub
+    End Sub
 
 
     Private Sub btnFinalizar_Click(sender As Object, e As EventArgs) Handles btnFinalizar.Click
@@ -257,4 +257,56 @@ Public Class VENTAS
 
     End Sub
 
+    Private Sub btnAgregar_Click_1(sender As Object, e As EventArgs) Handles btnAgregar.Click
+
+        If numCantidad.Value <= 0 Then
+            MessageBox.Show("Cantidad inválida")
+            Exit Sub
+        End If
+
+        Dim cantidad As Integer = numCantidad.Value
+        Dim precio As Decimal
+        Dim idProd As Integer = cmbProducto.SelectedValue
+
+        Dim fila As DataRowView = cmbProducto.SelectedItem
+        precio = fila("precio")
+
+        Dim cmdStock As New MySqlCommand("SELECT stock FROM inventario WHERE idProd=@id", conexion)
+        cmdStock.Parameters.AddWithValue("@id", idProd)
+
+        conexion.Open()
+        Dim stockActual As Integer = Convert.ToInt32(cmdStock.ExecuteScalar())
+        conexion.Close()
+
+        For Each filaGrid As DataGridViewRow In dgvDetalle.Rows
+
+            If filaGrid.Cells(0).Value = idProd Then
+
+                Dim nuevaCantidad As Integer = filaGrid.Cells(3).Value + cantidad
+
+                If nuevaCantidad > stockActual Then
+                    MessageBox.Show("No hay suficiente stock")
+                    Exit Sub
+                End If
+
+                filaGrid.Cells(3).Value = nuevaCantidad
+                filaGrid.Cells(4).Value = precio * nuevaCantidad
+
+                calcularTotal()
+                numCantidad.Value = 1
+                Exit Sub
+            End If
+
+        Next
+
+        If cantidad > stockActual Then
+            MessageBox.Show("No hay suficiente stock")
+            Exit Sub
+        End If
+
+        dgvDetalle.Rows.Add(idProd, cmbProducto.Text, precio, cantidad, precio * cantidad)
+
+        calcularTotal()
+        numCantidad.Value = 1
+    End Sub
 End Class

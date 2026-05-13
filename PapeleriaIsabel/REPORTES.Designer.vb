@@ -27,68 +27,58 @@ Partial Class REPORTES
         dtpFin = New DateTimePicker()
         Label1 = New Label()
         Label2 = New Label()
-        btnBuscar = New Button()
         dgvReportes = New DataGridView()
         PictureBox1 = New PictureBox()
         lblTotal = New Label()
         Button1 = New Button()
         PictureBox2 = New PictureBox()
+        btnBuscar = New PictureBox()
         CType(dgvReportes, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(btnBuscar, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' dtpInicio
         ' 
-        dtpInicio.Font = New Font("MS Reference Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        dtpInicio.Font = New Font("MS Reference Sans Serif", 19.8000011F)
         dtpInicio.Format = DateTimePickerFormat.Short
-        dtpInicio.Location = New Point(675, 94)
+        dtpInicio.Location = New Point(615, 123)
         dtpInicio.Name = "dtpInicio"
-        dtpInicio.Size = New Size(228, 40)
+        dtpInicio.Size = New Size(228, 48)
         dtpInicio.TabIndex = 0
         ' 
         ' dtpFin
         ' 
         dtpFin.CalendarFont = New Font("MS Reference Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        dtpFin.Font = New Font("MS Reference Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        dtpFin.Font = New Font("MS Reference Sans Serif", 19.8000011F)
         dtpFin.Format = DateTimePickerFormat.Short
-        dtpFin.Location = New Point(1073, 94)
+        dtpFin.Location = New Point(957, 123)
         dtpFin.Name = "dtpFin"
-        dtpFin.Size = New Size(217, 40)
+        dtpFin.Size = New Size(229, 48)
         dtpFin.TabIndex = 1
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.BackColor = Color.WhiteSmoke
-        Label1.Font = New Font("MS Reference Sans Serif", 16.2F)
-        Label1.Location = New Point(532, 99)
+        Label1.BackColor = Color.White
+        Label1.Font = New Font("MS Reference Sans Serif", 19.8000011F, FontStyle.Bold)
+        Label1.Location = New Point(456, 129)
         Label1.Name = "Label1"
-        Label1.Size = New Size(111, 35)
+        Label1.Size = New Size(139, 42)
         Label1.TabIndex = 2
         Label1.Text = "Fecha:"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.BackColor = Color.WhiteSmoke
-        Label2.Font = New Font("MS Reference Sans Serif", 16.2F)
-        Label2.Location = New Point(965, 99)
+        Label2.BackColor = Color.White
+        Label2.Font = New Font("MS Reference Sans Serif", 19.8000011F, FontStyle.Bold)
+        Label2.Location = New Point(871, 129)
         Label2.Name = "Label2"
-        Label2.Size = New Size(41, 35)
+        Label2.Size = New Size(49, 42)
         Label2.TabIndex = 3
         Label2.Text = "al"
-        ' 
-        ' btnBuscar
-        ' 
-        btnBuscar.BackColor = Color.PaleTurquoise
-        btnBuscar.Font = New Font("MS Reference Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        btnBuscar.Location = New Point(870, 161)
-        btnBuscar.Name = "btnBuscar"
-        btnBuscar.Size = New Size(208, 57)
-        btnBuscar.TabIndex = 4
-        btnBuscar.Text = "BUSCAR"
-        btnBuscar.UseVisualStyleBackColor = False
         ' 
         ' dgvReportes
         ' 
@@ -102,10 +92,11 @@ Partial Class REPORTES
         ' 
         ' PictureBox1
         ' 
-        PictureBox1.Image = My.Resources.Resources.download__1_
-        PictureBox1.Location = New Point(49, 887)
+        PictureBox1.BackColor = Color.White
+        PictureBox1.Image = My.Resources.Resources.regresar
+        PictureBox1.Location = New Point(49, 875)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(93, 95)
+        PictureBox1.Size = New Size(100, 107)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 6
         PictureBox1.TabStop = False
@@ -113,43 +104,57 @@ Partial Class REPORTES
         ' lblTotal
         ' 
         lblTotal.AutoSize = True
-        lblTotal.Font = New Font("MS Reference Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        lblTotal.Location = New Point(708, 906)
+        lblTotal.BackColor = Color.White
+        lblTotal.Font = New Font("MS Reference Sans Serif", 36F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblTotal.Location = New Point(680, 887)
         lblTotal.Name = "lblTotal"
-        lblTotal.Size = New Size(209, 49)
+        lblTotal.Size = New Size(321, 74)
         lblTotal.TabIndex = 7
         lblTotal.Text = "TOTAL: $"
         ' 
         ' Button1
         ' 
+        Button1.BackColor = Color.White
         Button1.Enabled = False
         Button1.Location = New Point(21, 33)
         Button1.Name = "Button1"
         Button1.Size = New Size(1705, 976)
         Button1.TabIndex = 12
-        Button1.UseVisualStyleBackColor = True
+        Button1.UseVisualStyleBackColor = False
         ' 
         ' PictureBox2
         ' 
+        PictureBox2.BackColor = Color.White
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(1601, 50)
+        PictureBox2.Location = New Point(1595, 60)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(111, 119)
+        PictureBox2.Size = New Size(120, 131)
         PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox2.TabIndex = 13
         PictureBox2.TabStop = False
+        ' 
+        ' btnBuscar
+        ' 
+        btnBuscar.BackColor = Color.White
+        btnBuscar.Image = My.Resources.Resources.buscar
+        btnBuscar.Location = New Point(1213, 69)
+        btnBuscar.Name = "btnBuscar"
+        btnBuscar.Size = New Size(119, 122)
+        btnBuscar.SizeMode = PictureBoxSizeMode.StretchImage
+        btnBuscar.TabIndex = 15
+        btnBuscar.TabStop = False
         ' 
         ' REPORTES
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.White
+        BackColor = Color.FromArgb(CByte(255), CByte(249), CByte(239))
         ClientSize = New Size(1747, 1043)
+        Controls.Add(btnBuscar)
         Controls.Add(PictureBox2)
         Controls.Add(lblTotal)
         Controls.Add(PictureBox1)
         Controls.Add(dgvReportes)
-        Controls.Add(btnBuscar)
         Controls.Add(Label2)
         Controls.Add(Label1)
         Controls.Add(dtpFin)
@@ -163,6 +168,7 @@ Partial Class REPORTES
         CType(dgvReportes, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
+        CType(btnBuscar, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -171,10 +177,10 @@ Partial Class REPORTES
     Friend WithEvents dtpFin As DateTimePicker
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents btnBuscar As Button
     Friend WithEvents dgvReportes As DataGridView
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents lblTotal As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents btnBuscar As PictureBox
 End Class

@@ -28,15 +28,17 @@ Partial Class INVENTARIO
         dgvInventario = New DataGridView()
         PictureBox2 = New PictureBox()
         Label1 = New Label()
-        btnAgregarStock = New Button()
         Label2 = New Label()
         Label3 = New Label()
         txtBuscar = New TextBox()
-        btnQuitarStock = New Button()
         Button1 = New Button()
+        btnStock = New PictureBox()
+        btnAgregarStock = New PictureBox()
         CType(numCantidad, ComponentModel.ISupportInitialize).BeginInit()
         CType(dgvInventario, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(btnStock, ComponentModel.ISupportInitialize).BeginInit()
+        CType(btnAgregarStock, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' cmbProducto
@@ -69,10 +71,10 @@ Partial Class INVENTARIO
         ' PictureBox2
         ' 
         PictureBox2.BackColor = Color.WhiteSmoke
-        PictureBox2.Image = My.Resources.Resources.download__1_
-        PictureBox2.Location = New Point(49, 887)
+        PictureBox2.Image = My.Resources.Resources.regresar
+        PictureBox2.Location = New Point(49, 881)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(93, 95)
+        PictureBox2.Size = New Size(96, 101)
         PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox2.TabIndex = 4
         PictureBox2.TabStop = False
@@ -80,6 +82,7 @@ Partial Class INVENTARIO
         ' Label1
         ' 
         Label1.AutoSize = True
+        Label1.BackColor = Color.White
         Label1.Font = New Font("MS Reference Sans Serif", 16.2F)
         Label1.Location = New Point(85, 53)
         Label1.Name = "Label1"
@@ -87,20 +90,10 @@ Partial Class INVENTARIO
         Label1.TabIndex = 5
         Label1.Text = "Producto:"
         ' 
-        ' btnAgregarStock
-        ' 
-        btnAgregarStock.BackColor = Color.PaleTurquoise
-        btnAgregarStock.Font = New Font("MS Reference Sans Serif", 16.2F)
-        btnAgregarStock.Location = New Point(651, 61)
-        btnAgregarStock.Name = "btnAgregarStock"
-        btnAgregarStock.Size = New Size(193, 68)
-        btnAgregarStock.TabIndex = 6
-        btnAgregarStock.Text = "AGREGAR"
-        btnAgregarStock.UseVisualStyleBackColor = False
-        ' 
         ' Label2
         ' 
         Label2.AutoSize = True
+        Label2.BackColor = Color.White
         Label2.Font = New Font("MS Reference Sans Serif", 16.2F)
         Label2.Location = New Point(85, 120)
         Label2.Name = "Label2"
@@ -111,6 +104,7 @@ Partial Class INVENTARIO
         ' Label3
         ' 
         Label3.AutoSize = True
+        Label3.BackColor = Color.White
         Label3.Font = New Font("MS Reference Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label3.Location = New Point(113, 185)
         Label3.Name = "Label3"
@@ -127,17 +121,6 @@ Partial Class INVENTARIO
         txtBuscar.Size = New Size(997, 47)
         txtBuscar.TabIndex = 9
         ' 
-        ' btnQuitarStock
-        ' 
-        btnQuitarStock.BackColor = Color.FromArgb(CByte(255), CByte(128), CByte(128))
-        btnQuitarStock.Font = New Font("MS Reference Sans Serif", 16.2F)
-        btnQuitarStock.Location = New Point(896, 61)
-        btnQuitarStock.Name = "btnQuitarStock"
-        btnQuitarStock.Size = New Size(193, 68)
-        btnQuitarStock.TabIndex = 10
-        btnQuitarStock.Text = "ELIMINAR"
-        btnQuitarStock.UseVisualStyleBackColor = False
-        ' 
         ' Button1
         ' 
         Button1.Enabled = False
@@ -147,17 +130,37 @@ Partial Class INVENTARIO
         Button1.TabIndex = 11
         Button1.UseVisualStyleBackColor = True
         ' 
+        ' btnStock
+        ' 
+        btnStock.Image = My.Resources.Resources.eliminarfondo
+        btnStock.Location = New Point(655, 45)
+        btnStock.Name = "btnStock"
+        btnStock.Size = New Size(120, 122)
+        btnStock.SizeMode = PictureBoxSizeMode.StretchImage
+        btnStock.TabIndex = 41
+        btnStock.TabStop = False
+        ' 
+        ' btnAgregarStock
+        ' 
+        btnAgregarStock.Image = My.Resources.Resources.botonagregarfondo
+        btnAgregarStock.Location = New Point(505, 45)
+        btnAgregarStock.Name = "btnAgregarStock"
+        btnAgregarStock.Size = New Size(120, 122)
+        btnAgregarStock.SizeMode = PictureBoxSizeMode.StretchImage
+        btnAgregarStock.TabIndex = 42
+        btnAgregarStock.TabStop = False
+        ' 
         ' INVENTARIO
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.White
+        BackColor = Color.FromArgb(CByte(255), CByte(249), CByte(239))
         ClientSize = New Size(1747, 1043)
-        Controls.Add(btnQuitarStock)
+        Controls.Add(btnAgregarStock)
+        Controls.Add(btnStock)
         Controls.Add(txtBuscar)
         Controls.Add(Label3)
         Controls.Add(Label2)
-        Controls.Add(btnAgregarStock)
         Controls.Add(Label1)
         Controls.Add(PictureBox2)
         Controls.Add(dgvInventario)
@@ -172,6 +175,8 @@ Partial Class INVENTARIO
         CType(numCantidad, ComponentModel.ISupportInitialize).EndInit()
         CType(dgvInventario, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
+        CType(btnStock, ComponentModel.ISupportInitialize).EndInit()
+        CType(btnAgregarStock, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -181,10 +186,10 @@ Partial Class INVENTARIO
     Friend WithEvents dgvInventario As DataGridView
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents btnAgregarStock As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents txtBuscar As TextBox
-    Friend WithEvents btnQuitarStock As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents btnStock As PictureBox
+    Friend WithEvents btnAgregarStock As PictureBox
 End Class
