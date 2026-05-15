@@ -54,7 +54,7 @@ Public Class Cobro
         Try
             Dim ruta As String = "ticket.pdf"
 
-            ' 🔥 TAMAÑO TICKET REAL
+            'TAMAÑO TICKET REAL
             Dim doc As New iTextSharp.text.Document(New iTextSharp.text.Rectangle(164, 350))
             PdfWriter.GetInstance(doc, New FileStream(ruta, FileMode.Create))
 

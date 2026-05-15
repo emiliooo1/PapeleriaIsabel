@@ -33,6 +33,7 @@ Partial Class REPORTES
         Button1 = New Button()
         PictureBox2 = New PictureBox()
         btnBuscar = New PictureBox()
+        Label3 = New Label()
         CType(dgvReportes, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
@@ -144,12 +145,25 @@ Partial Class REPORTES
         btnBuscar.TabIndex = 15
         btnBuscar.TabStop = False
         ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.BackColor = Color.White
+        Label3.Font = New Font("Microsoft YaHei", 28.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label3.ForeColor = Color.FromArgb(CByte(1), CByte(61), CByte(90))
+        Label3.Location = New Point(58, 69)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(273, 62)
+        Label3.TabIndex = 22
+        Label3.Text = "REPORTES"
+        ' 
         ' REPORTES
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(255), CByte(249), CByte(239))
         ClientSize = New Size(1747, 1043)
+        Controls.Add(Label3)
         Controls.Add(btnBuscar)
         Controls.Add(PictureBox2)
         Controls.Add(lblTotal)
@@ -183,4 +197,5 @@ Partial Class REPORTES
     Friend WithEvents Button1 As Button
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents btnBuscar As PictureBox
+    Friend WithEvents Label3 As Label
 End Class

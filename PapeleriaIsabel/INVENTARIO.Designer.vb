@@ -34,6 +34,7 @@ Partial Class INVENTARIO
         Button1 = New Button()
         btnStock = New PictureBox()
         btnAgregarStock = New PictureBox()
+        Label5 = New Label()
         CType(numCantidad, ComponentModel.ISupportInitialize).BeginInit()
         CType(dgvInventario, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
@@ -64,6 +65,7 @@ Partial Class INVENTARIO
         dgvInventario.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         dgvInventario.Location = New Point(49, 235)
         dgvInventario.Name = "dgvInventario"
+        dgvInventario.ReadOnly = True
         dgvInventario.RowHeadersWidth = 51
         dgvInventario.Size = New Size(1625, 615)
         dgvInventario.TabIndex = 3
@@ -150,12 +152,25 @@ Partial Class INVENTARIO
         btnAgregarStock.TabIndex = 42
         btnAgregarStock.TabStop = False
         ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.BackColor = Color.White
+        Label5.Font = New Font("Microsoft YaHei", 28.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label5.ForeColor = Color.FromArgb(CByte(1), CByte(61), CByte(90))
+        Label5.Location = New Point(1339, 53)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(335, 62)
+        Label5.TabIndex = 43
+        Label5.Text = "INVENTARIO"
+        ' 
         ' INVENTARIO
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(255), CByte(249), CByte(239))
         ClientSize = New Size(1747, 1043)
+        Controls.Add(Label5)
         Controls.Add(btnAgregarStock)
         Controls.Add(btnStock)
         Controls.Add(txtBuscar)
@@ -192,4 +207,5 @@ Partial Class INVENTARIO
     Friend WithEvents Button1 As Button
     Friend WithEvents btnStock As PictureBox
     Friend WithEvents btnAgregarStock As PictureBox
+    Friend WithEvents Label5 As Label
 End Class

@@ -41,11 +41,14 @@ Partial Class Productos
         btnEditar = New PictureBox()
         btnEliminar = New PictureBox()
         Button1 = New Button()
+        Label7 = New Label()
+        btnLimpiar = New PictureBox()
         CType(dgvProductos, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(btnAgregar, ComponentModel.ISupportInitialize).BeginInit()
         CType(btnEditar, ComponentModel.ISupportInitialize).BeginInit()
         CType(btnEliminar, ComponentModel.ISupportInitialize).BeginInit()
+        CType(btnLimpiar, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' dgvProductos
@@ -128,7 +131,7 @@ Partial Class Productos
         ' txtID
         ' 
         txtID.Font = New Font("MS Reference Sans Serif", 16.2F)
-        txtID.Location = New Point(254, 378)
+        txtID.Location = New Point(254, 301)
         txtID.Multiline = True
         txtID.Name = "txtID"
         txtID.Size = New Size(219, 43)
@@ -140,13 +143,13 @@ Partial Class Productos
         txtBuscar.Location = New Point(743, 163)
         txtBuscar.Multiline = True
         txtBuscar.Name = "txtBuscar"
-        txtBuscar.Size = New Size(660, 42)
+        txtBuscar.Size = New Size(787, 42)
         txtBuscar.TabIndex = 8
         ' 
         ' txtNombre
         ' 
         txtNombre.Font = New Font("MS Reference Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        txtNombre.Location = New Point(254, 309)
+        txtNombre.Location = New Point(254, 368)
         txtNombre.Multiline = True
         txtNombre.Name = "txtNombre"
         txtNombre.Size = New Size(219, 45)
@@ -204,7 +207,7 @@ Partial Class Productos
         ' btnEditar
         ' 
         btnEditar.BackColor = Color.White
-        btnEditar.Image = My.Resources.Resources.editar
+        btnEditar.Image = My.Resources.Resources.editar__1_
         btnEditar.Location = New Point(189, 68)
         btnEditar.Name = "btnEditar"
         btnEditar.Size = New Size(112, 121)
@@ -233,12 +236,37 @@ Partial Class Productos
         Button1.TabIndex = 19
         Button1.UseVisualStyleBackColor = False
         ' 
+        ' Label7
+        ' 
+        Label7.AutoSize = True
+        Label7.BackColor = Color.White
+        Label7.Font = New Font("Microsoft YaHei", 28.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label7.ForeColor = Color.FromArgb(CByte(1), CByte(61), CByte(90))
+        Label7.Location = New Point(1367, 68)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(329, 62)
+        Label7.TabIndex = 36
+        Label7.Text = "PRODUCTOS"
+        ' 
+        ' btnLimpiar
+        ' 
+        btnLimpiar.BackColor = Color.White
+        btnLimpiar.Image = My.Resources.Resources.borrar__1_
+        btnLimpiar.Location = New Point(475, 68)
+        btnLimpiar.Name = "btnLimpiar"
+        btnLimpiar.Size = New Size(113, 121)
+        btnLimpiar.SizeMode = PictureBoxSizeMode.StretchImage
+        btnLimpiar.TabIndex = 37
+        btnLimpiar.TabStop = False
+        ' 
         ' Productos
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(255), CByte(249), CByte(239))
         ClientSize = New Size(1747, 1043)
+        Controls.Add(btnLimpiar)
+        Controls.Add(Label7)
         Controls.Add(btnEliminar)
         Controls.Add(btnEditar)
         Controls.Add(btnAgregar)
@@ -267,6 +295,7 @@ Partial Class Productos
         CType(btnAgregar, ComponentModel.ISupportInitialize).EndInit()
         CType(btnEditar, ComponentModel.ISupportInitialize).EndInit()
         CType(btnEliminar, ComponentModel.ISupportInitialize).EndInit()
+        CType(btnLimpiar, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -289,4 +318,6 @@ Partial Class Productos
     Friend WithEvents btnEditar As PictureBox
     Friend WithEvents btnEliminar As PictureBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents Label7 As Label
+    Friend WithEvents btnLimpiar As PictureBox
 End Class

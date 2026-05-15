@@ -39,11 +39,14 @@ Partial Class PROVEEDORES
         Label1 = New Label()
         dgvProveedores = New DataGridView()
         Button1 = New Button()
+        Label5 = New Label()
+        btnLimpiar = New PictureBox()
         CType(btnEliminar, ComponentModel.ISupportInitialize).BeginInit()
         CType(btnEditar, ComponentModel.ISupportInitialize).BeginInit()
         CType(btnAgregar, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(dgvProveedores, ComponentModel.ISupportInitialize).BeginInit()
+        CType(btnLimpiar, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' btnEliminar
@@ -60,7 +63,7 @@ Partial Class PROVEEDORES
         ' btnEditar
         ' 
         btnEditar.BackColor = Color.White
-        btnEditar.Image = My.Resources.Resources.editar
+        btnEditar.Image = My.Resources.Resources.editar__1_
         btnEditar.Location = New Point(191, 66)
         btnEditar.Name = "btnEditar"
         btnEditar.Size = New Size(112, 121)
@@ -211,12 +214,37 @@ Partial Class PROVEEDORES
         Button1.TabIndex = 34
         Button1.UseVisualStyleBackColor = False
         ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.BackColor = Color.White
+        Label5.Font = New Font("Microsoft YaHei", 28.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label5.ForeColor = Color.FromArgb(CByte(1), CByte(61), CByte(90))
+        Label5.Location = New Point(1316, 66)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(380, 62)
+        Label5.TabIndex = 35
+        Label5.Text = "PROVEEDORES"
+        ' 
+        ' btnLimpiar
+        ' 
+        btnLimpiar.BackColor = Color.White
+        btnLimpiar.Image = My.Resources.Resources.borrar__1_
+        btnLimpiar.Location = New Point(472, 66)
+        btnLimpiar.Name = "btnLimpiar"
+        btnLimpiar.Size = New Size(113, 121)
+        btnLimpiar.SizeMode = PictureBoxSizeMode.StretchImage
+        btnLimpiar.TabIndex = 38
+        btnLimpiar.TabStop = False
+        ' 
         ' PROVEEDORES
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(255), CByte(249), CByte(239))
         ClientSize = New Size(1747, 1043)
+        Controls.Add(btnLimpiar)
+        Controls.Add(Label5)
         Controls.Add(btnEliminar)
         Controls.Add(btnEditar)
         Controls.Add(btnAgregar)
@@ -243,6 +271,7 @@ Partial Class PROVEEDORES
         CType(btnAgregar, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         CType(dgvProveedores, ComponentModel.ISupportInitialize).EndInit()
+        CType(btnLimpiar, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -263,4 +292,6 @@ Partial Class PROVEEDORES
     Friend WithEvents Label1 As Label
     Friend WithEvents dgvProveedores As DataGridView
     Friend WithEvents Button1 As Button
+    Friend WithEvents Label5 As Label
+    Friend WithEvents btnLimpiar As PictureBox
 End Class

@@ -63,61 +63,6 @@ Public Class VENTAS
     End Sub
 
 
-    Private Sub btnAgregar_Click(sender As Object, e As EventArgs)
-
-        If numCantidad.Value <= 0 Then
-            MessageBox.Show("Cantidad inválida")
-            Exit Sub
-        End If
-
-        Dim cantidad As Integer = numCantidad.Value
-        Dim precio As Decimal
-        Dim idProd As Integer = cmbProducto.SelectedValue
-
-        Dim fila As DataRowView = cmbProducto.SelectedItem
-        precio = fila("precio")
-
-        Dim cmdStock As New MySqlCommand("SELECT stock FROM inventario WHERE idProd=@id", conexion)
-        cmdStock.Parameters.AddWithValue("@id", idProd)
-
-        conexion.Open()
-        Dim stockActual = Convert.ToInt32(cmdStock.ExecuteScalar)
-        conexion.Close()
-
-        For Each filaGrid As DataGridViewRow In dgvDetalle.Rows
-
-            If filaGrid.Cells(0).Value = idProd Then
-
-                Dim nuevaCantidad As Integer = filaGrid.Cells(3).Value + cantidad
-
-                If nuevaCantidad > stockActual Then
-                    MessageBox.Show("No hay suficiente stock")
-                    Exit Sub
-                End If
-
-                filaGrid.Cells(3).Value = nuevaCantidad
-                filaGrid.Cells(4).Value = precio * nuevaCantidad
-
-                calcularTotal()
-                numCantidad.Value = 1
-                Exit Sub
-            End If
-
-        Next
-
-        If cantidad > stockActual Then
-            MessageBox.Show("No hay suficiente stock")
-            Exit Sub
-        End If
-
-        dgvDetalle.Rows.Add(idProd, cmbProducto.Text, precio, cantidad, precio * cantidad)
-
-        calcularTotal()
-        numCantidad.Value = 1
-
-    End Sub
-
-
     Sub calcularTotal()
 
         total = 0

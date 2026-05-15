@@ -7,7 +7,7 @@ Public Class PROVEEDORES
     Sub cargarProveedores()
 
         Dim dt As New DataTable
-        Dim da As New MySqlDataAdapter("SELECT * FROM proveedores", conexion)
+        Dim da As New MySqlDataAdapter("SELECT idProv, nombre, correo, telefono FROM proveedores WHERE activo=1", conexion)
 
         da.Fill(dt)
         dgvProveedores.DataSource = dt
@@ -52,8 +52,13 @@ Public Class PROVEEDORES
             conexion.Close
 
             MessageBox.Show("Proveedor agregado")
-            cargarProveedores
+            cargarProveedores()
 
+            txtBuscar.Clear()
+            txtCorreo.Clear()
+            txtID.Clear()
+            txtNombre.Clear()
+            txtTelefono.Clear()
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
             conexion.Close
@@ -114,7 +119,7 @@ Public Class PROVEEDORES
             Try
                 conexion.Open()
 
-                Dim cmd As New MySqlCommand("DELETE FROM proveedores WHERE idProv=@id", conexion)
+                Dim cmd As New MySqlCommand("UPDATE proveedores SET activo=0 WHERE idProv=?", conexion)
                 cmd.Parameters.AddWithValue("@id", txtID.Text)
 
                 cmd.ExecuteNonQuery()
@@ -167,7 +172,11 @@ Public Class PROVEEDORES
 
     End Sub
 
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs)
+    Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
+        txtID.Clear()
+        txtNombre.Clear()
+        txtTelefono.Clear()
+        txtCorreo.Clear()
 
     End Sub
 End Class

@@ -9,7 +9,8 @@ Public Class Productos
         Dim da As New MySqlDataAdapter("
         SELECT p.idProd, p.nombre, pr.nombre AS proveedor, p.precio, p.descripcion
         FROM productos p
-        INNER JOIN proveedores pr ON p.idProv = pr.idProv", conexion)
+        INNER JOIN proveedores pr ON p.idProv = pr.idProv
+        WHERE p.activo = 1", conexion)
 
         da.Fill(dt)
         dgvProductos.DataSource = dt
@@ -18,7 +19,7 @@ Public Class Productos
 
     Sub cargarProveedores()
         Dim dt As New DataTable
-        Dim da As New MySqlDataAdapter("SELECT idProv, nombre FROM proveedores", conexion)
+        Dim da As New MySqlDataAdapter("SELECT idProv, nombre FROM proveedores WHERE activo=1", conexion)
 
         da.Fill(dt)
 
@@ -72,7 +73,17 @@ Public Class Productos
             conexion.Close()
 
             MessageBox.Show("Producto agregado")
+
             cargarProductos()
+
+            txtID.Clear()
+            txtNombre.Clear()
+            txtDescripcion.Clear()
+            txtPrecio.Clear()
+
+            cmbProveedor.SelectedIndex = 0
+
+            txtID.Focus()
 
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
@@ -118,11 +129,18 @@ Public Class Productos
             MessageBox.Show("Producto actualizado")
             cargarProductos()
 
+            txtID.Clear()
+            txtNombre.Clear()
+            txtDescripcion.Clear()
+            txtPrecio.Clear()
+            cmbProveedor.SelectedIndex = 0
+
+            txtID.Focus()
+
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
             conexion.Close()
         End Try
-
     End Sub
 
 
@@ -133,24 +151,32 @@ Public Class Productos
         If MessageBox.Show("¿Eliminar producto?", "Confirmar", MessageBoxButtons.YesNo) = DialogResult.Yes Then
 
             Try
-                conexion.Open()
+                conexion.Open
 
-                Dim cmd As New MySqlCommand("DELETE FROM productos WHERE idProd=@id", conexion)
+                Dim cmd As New MySqlCommand("UPDATE productos SET activo=0 WHERE idProd=@id", conexion)
                 cmd.Parameters.AddWithValue("@id", txtID.Text)
 
-                cmd.ExecuteNonQuery()
-                conexion.Close()
+                cmd.ExecuteNonQuery
+                conexion.Close
 
                 MessageBox.Show("Producto eliminado")
-                cargarProductos()
+                cargarProductos
+
+                txtID.Clear
+                txtNombre.Clear
+                txtDescripcion.Clear
+                txtPrecio.Clear
+
+                cmbProveedor.SelectedIndex = 0
+
+                txtID.Focus
 
             Catch ex As Exception
                 MessageBox.Show("Error: " & ex.Message)
-                conexion.Close()
+                conexion.Close
             End Try
 
         End If
-
     End Sub
 
 
@@ -190,4 +216,12 @@ Public Class Productos
 
     End Sub
 
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
+        txtID.Clear()
+        txtNombre.Clear()
+        txtDescripcion.Clear()
+        txtPrecio.Clear()
+        cmbProveedor.SelectedIndex = 0
+        txtID.Focus()
+    End Sub
 End Class

@@ -29,6 +29,7 @@ Partial Class CancelarVenta
         PictureBox2 = New PictureBox()
         btnCancelarVenta = New PictureBox()
         lblTotal = New Label()
+        Label5 = New Label()
         CType(dgvDetalle, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         CType(btnCancelarVenta, ComponentModel.ISupportInitialize).BeginInit()
@@ -50,7 +51,7 @@ Partial Class CancelarVenta
         txtIdVenta.Location = New Point(220, 133)
         txtIdVenta.Multiline = True
         txtIdVenta.Name = "txtIdVenta"
-        txtIdVenta.Size = New Size(997, 47)
+        txtIdVenta.Size = New Size(468, 47)
         txtIdVenta.TabIndex = 37
         ' 
         ' Label3
@@ -89,7 +90,7 @@ Partial Class CancelarVenta
         ' btnCancelarVenta
         ' 
         btnCancelarVenta.Image = My.Resources.Resources.eliminarfondo
-        btnCancelarVenta.Location = New Point(1246, 50)
+        btnCancelarVenta.Location = New Point(731, 60)
         btnCancelarVenta.Name = "btnCancelarVenta"
         btnCancelarVenta.Size = New Size(140, 148)
         btnCancelarVenta.SizeMode = PictureBoxSizeMode.StretchImage
@@ -107,12 +108,25 @@ Partial Class CancelarVenta
         lblTotal.TabIndex = 41
         lblTotal.Text = "TOTAL: $"
         ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.BackColor = Color.White
+        Label5.Font = New Font("Microsoft YaHei", 28.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label5.ForeColor = Color.FromArgb(CByte(1), CByte(61), CByte(90))
+        Label5.Location = New Point(1220, 73)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(466, 62)
+        Label5.TabIndex = 44
+        Label5.Text = "CANCELAR VENTA"
+        ' 
         ' CancelarVenta
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(255), CByte(249), CByte(239))
         ClientSize = New Size(1747, 1043)
+        Controls.Add(Label5)
         Controls.Add(lblTotal)
         Controls.Add(btnCancelarVenta)
         Controls.Add(PictureBox2)
@@ -139,4 +153,5 @@ Partial Class CancelarVenta
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents btnCancelarVenta As PictureBox
     Friend WithEvents lblTotal As Label
+    Friend WithEvents Label5 As Label
 End Class

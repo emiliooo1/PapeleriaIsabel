@@ -8,7 +8,7 @@ Public Class Login
         Dim cmd As New MySqlCommand("
     SELECT idUsuario, tipo 
     FROM usuarios 
-    WHERE usuario=@user AND contrasena=@pass", conexion)
+    WHERE usuario=@user AND contrasena=@pass AND activo=1", conexion)
 
         cmd.Parameters.AddWithValue("@user", txtUsuario.Text)
         cmd.Parameters.AddWithValue("@pass", txtContrasena.Text)

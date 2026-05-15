@@ -10,13 +10,9 @@ Public Class Usuarios
         Dim dt As New DataTable
 
         Dim da As New MySqlDataAdapter("
-        SELECT 
-        idUsuario, 
-        usuario, 
-        contrasena,
-        tipo, 
-        IFNULL(DATE_FORMAT(ultimo_login, '%d/%m/%Y %H:%i'), 'Nunca') AS ultimo_login
-        FROM usuarios", conexion)
+        SELECT idUsuario, usuario, contrasena,tipo, IFNULL(DATE_FORMAT(ultimo_login, '%d/%m/%Y %H:%i'), 'Nunca') AS ultimo_login
+        FROM usuarios
+        WHERE activo=1", conexion)
 
         da.Fill(dt)
 
@@ -65,14 +61,14 @@ Public Class Usuarios
         cmd.Parameters.AddWithValue("@pass", txtContrasena.Text)
         cmd.Parameters.AddWithValue("@tipo", cmbTipo.Text)
 
-        conexion.Open()
-        cmd.ExecuteNonQuery()
-        conexion.Close()
+        conexion.Open
+        cmd.ExecuteNonQuery
+        conexion.Close
 
         MessageBox.Show("Usuario agregado")
 
-        cargarUsuarios()
-        limpiar()
+        cargarUsuarios
+        limpiar
 
     End Sub
 
@@ -115,7 +111,7 @@ Public Class Usuarios
 
         If MessageBox.Show("¿Eliminar usuario?", "Confirmar", MessageBoxButtons.YesNo) = DialogResult.No Then Exit Sub
 
-        Dim cmd As New MySqlCommand("DELETE FROM usuarios WHERE idUsuario=@id", conexion)
+        Dim cmd As New MySqlCommand("UPDATE usuarios SET activo =0 WHERE idusuario=?", conexion)
         cmd.Parameters.AddWithValue("@id", idSeleccionado)
 
         conexion.Open()
@@ -170,5 +166,11 @@ Public Class Usuarios
 
         End If
 
+    End Sub
+
+    Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
+        txtUsuario.Clear()
+        txtContrasena.Clear()
+        cmbTipo.SelectedIndex = 0
     End Sub
 End Class

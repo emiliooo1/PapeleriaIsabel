@@ -34,6 +34,7 @@ Partial Class VENTAS
         btnEliminarProducto = New PictureBox()
         Button1 = New Button()
         btnAgregar = New PictureBox()
+        Label5 = New Label()
         CType(dgvDetalle, ComponentModel.ISupportInitialize).BeginInit()
         CType(numCantidad, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
@@ -157,12 +158,25 @@ Partial Class VENTAS
         btnAgregar.TabIndex = 19
         btnAgregar.TabStop = False
         ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.BackColor = Color.White
+        Label5.Font = New Font("Microsoft YaHei", 28.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label5.ForeColor = Color.FromArgb(CByte(1), CByte(61), CByte(90))
+        Label5.Location = New Point(1454, 61)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(220, 62)
+        Label5.TabIndex = 44
+        Label5.Text = "VENTAS"
+        ' 
         ' VENTAS
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(255), CByte(249), CByte(239))
         ClientSize = New Size(1747, 1043)
+        Controls.Add(Label5)
         Controls.Add(btnAgregar)
         Controls.Add(btnEliminarProducto)
         Controls.Add(PictureBox1)
@@ -199,4 +213,5 @@ Partial Class VENTAS
     Friend WithEvents btnEliminarProducto As PictureBox
     Friend WithEvents Button1 As Button
     Friend WithEvents btnAgregar As PictureBox
+    Friend WithEvents Label5 As Label
 End Class

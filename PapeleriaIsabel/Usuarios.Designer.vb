@@ -34,29 +34,33 @@ Partial Class Usuarios
         Label2 = New Label()
         dgvUsuarios = New DataGridView()
         PictureBox1 = New PictureBox()
+        Label1 = New Label()
+        btnLimpiar = New PictureBox()
         CType(btnEliminar, ComponentModel.ISupportInitialize).BeginInit()
         CType(btnEditar, ComponentModel.ISupportInitialize).BeginInit()
         CType(btnAgregar, ComponentModel.ISupportInitialize).BeginInit()
         CType(dgvUsuarios, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(btnLimpiar, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Button1
         ' 
+        Button1.BackColor = Color.White
         Button1.Enabled = False
         Button1.Location = New Point(21, 33)
         Button1.Name = "Button1"
         Button1.Size = New Size(1705, 976)
         Button1.TabIndex = 20
-        Button1.UseVisualStyleBackColor = True
+        Button1.UseVisualStyleBackColor = False
         ' 
         ' btnEliminar
         ' 
         btnEliminar.BackColor = Color.White
-        btnEliminar.Image = My.Resources.Resources.borrar
-        btnEliminar.Location = New Point(361, 64)
+        btnEliminar.Image = My.Resources.Resources.eliminarfondo
+        btnEliminar.Location = New Point(358, 64)
         btnEliminar.Name = "btnEliminar"
-        btnEliminar.Size = New Size(93, 95)
+        btnEliminar.Size = New Size(112, 121)
         btnEliminar.SizeMode = PictureBoxSizeMode.StretchImage
         btnEliminar.TabIndex = 23
         btnEliminar.TabStop = False
@@ -64,10 +68,10 @@ Partial Class Usuarios
         ' btnEditar
         ' 
         btnEditar.BackColor = Color.White
-        btnEditar.Image = My.Resources.Resources.editar
-        btnEditar.Location = New Point(202, 64)
+        btnEditar.Image = My.Resources.Resources.editar__1_
+        btnEditar.Location = New Point(208, 64)
         btnEditar.Name = "btnEditar"
-        btnEditar.Size = New Size(93, 95)
+        btnEditar.Size = New Size(112, 121)
         btnEditar.SizeMode = PictureBoxSizeMode.StretchImage
         btnEditar.TabIndex = 22
         btnEditar.TabStop = False
@@ -75,10 +79,10 @@ Partial Class Usuarios
         ' btnAgregar
         ' 
         btnAgregar.BackColor = Color.White
-        btnAgregar.Image = My.Resources.Resources.agregar
-        btnAgregar.Location = New Point(60, 64)
+        btnAgregar.Image = My.Resources.Resources.botonagregarfondo
+        btnAgregar.Location = New Point(59, 64)
         btnAgregar.Name = "btnAgregar"
-        btnAgregar.Size = New Size(93, 95)
+        btnAgregar.Size = New Size(113, 121)
         btnAgregar.SizeMode = PictureBoxSizeMode.StretchImage
         btnAgregar.TabIndex = 21
         btnAgregar.TabStop = False
@@ -149,6 +153,7 @@ Partial Class Usuarios
         dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         dgvUsuarios.Location = New Point(600, 229)
         dgvUsuarios.Name = "dgvUsuarios"
+        dgvUsuarios.ReadOnly = True
         dgvUsuarios.RowHeadersWidth = 51
         dgvUsuarios.Size = New Size(1087, 559)
         dgvUsuarios.TabIndex = 32
@@ -156,13 +161,36 @@ Partial Class Usuarios
         ' PictureBox1
         ' 
         PictureBox1.BackColor = Color.White
-        PictureBox1.Image = My.Resources.Resources.download__1_
-        PictureBox1.Location = New Point(64, 892)
+        PictureBox1.Image = My.Resources.Resources.regresar
+        PictureBox1.Location = New Point(64, 873)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(93, 95)
+        PictureBox1.Size = New Size(108, 114)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 33
         PictureBox1.TabStop = False
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.BackColor = Color.White
+        Label1.Font = New Font("Microsoft YaHei", 28.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.ForeColor = Color.FromArgb(CByte(1), CByte(61), CByte(90))
+        Label1.Location = New Point(1410, 64)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(277, 62)
+        Label1.TabIndex = 44
+        Label1.Text = "USUARIOS"
+        ' 
+        ' btnLimpiar
+        ' 
+        btnLimpiar.BackColor = Color.White
+        btnLimpiar.Image = My.Resources.Resources.borrar__1_
+        btnLimpiar.Location = New Point(508, 64)
+        btnLimpiar.Name = "btnLimpiar"
+        btnLimpiar.Size = New Size(113, 121)
+        btnLimpiar.SizeMode = PictureBoxSizeMode.StretchImage
+        btnLimpiar.TabIndex = 45
+        btnLimpiar.TabStop = False
         ' 
         ' Usuarios
         ' 
@@ -170,6 +198,8 @@ Partial Class Usuarios
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(255), CByte(249), CByte(239))
         ClientSize = New Size(1747, 1043)
+        Controls.Add(btnLimpiar)
+        Controls.Add(Label1)
         Controls.Add(PictureBox1)
         Controls.Add(dgvUsuarios)
         Controls.Add(cmbTipo)
@@ -192,6 +222,7 @@ Partial Class Usuarios
         CType(btnAgregar, ComponentModel.ISupportInitialize).EndInit()
         CType(dgvUsuarios, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(btnLimpiar, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -208,4 +239,6 @@ Partial Class Usuarios
     Friend WithEvents Label2 As Label
     Friend WithEvents dgvUsuarios As DataGridView
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents btnLimpiar As PictureBox
 End Class

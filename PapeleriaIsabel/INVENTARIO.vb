@@ -2,9 +2,6 @@
 
 Public Class INVENTARIO
     Dim conexion As New MySqlConnection("server=localhost;user id=root;password=1234567890;database=papeleria")
-
-
-
     Sub cargarInventario()
 
         Try
@@ -65,99 +62,6 @@ Public Class INVENTARIO
 
     End Sub
 
-
-    Private Sub btnAgregarStock_Click(sender As Object, e As EventArgs)
-
-        If numCantidad.Value <= 0 Then
-            MessageBox.Show("Cantidad inválida")
-            Exit Sub
-        End If
-
-        Try
-            conexion.Open()
-
-            Dim cmd As New MySqlCommand("
-            UPDATE inventario 
-            SET stock = stock + @cant 
-            WHERE idProd=@id", conexion)
-
-            cmd.Parameters.AddWithValue("@cant", numCantidad.Value)
-            cmd.Parameters.AddWithValue("@id", cmbProducto.SelectedValue)
-
-            Dim filas = cmd.ExecuteNonQuery
-
-            conexion.Close()
-
-            If filas = 0 Then
-                MessageBox.Show("No existe en inventario")
-            Else
-                MessageBox.Show("Stock agregado")
-            End If
-
-            cargarInventario()
-            numCantidad.Value = 1
-
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-            conexion.Close()
-        End Try
-
-    End Sub
-
-
-    Private Sub btnQuitarStock_Click(sender As Object, e As EventArgs)
-
-        If numCantidad.Value <= 0 Then
-            MessageBox.Show("Cantidad inválida")
-            Exit Sub
-        End If
-
-        Try
-            conexion.Open()
-
-
-            Dim cmdCheck As New MySqlCommand("SELECT stock FROM inventario WHERE idProd=@id", conexion)
-            cmdCheck.Parameters.AddWithValue("@id", cmbProducto.SelectedValue)
-
-            Dim stockActual = cmdCheck.ExecuteScalar
-
-            If IsDBNull(stockActual) Then
-                MessageBox.Show("No existe en inventario")
-                conexion.Close()
-                Exit Sub
-            End If
-
-            If numCantidad.Value > stockActual Then
-                MessageBox.Show("No hay suficiente stock")
-                conexion.Close()
-                Exit Sub
-            End If
-
-            ' Quitar stock
-            Dim cmd As New MySqlCommand("
-            UPDATE inventario 
-            SET stock = stock - @cant 
-            WHERE idProd=@id", conexion)
-
-            cmd.Parameters.AddWithValue("@cant", numCantidad.Value)
-            cmd.Parameters.AddWithValue("@id", cmbProducto.SelectedValue)
-
-            cmd.ExecuteNonQuery()
-            conexion.Close()
-
-            MessageBox.Show("Stock actualizado")
-
-            cargarInventario()
-            numCantidad.Value = 1
-
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-            conexion.Close()
-        End Try
-
-    End Sub
-
-
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
 
         Dim dt As New DataTable
@@ -194,8 +98,7 @@ Public Class INVENTARIO
 
     End Sub
 
-    Private Sub btnCancelarVenta_Click(sender As Object, e As EventArgs) Handles btnStock.Click
-
+    Private Sub btnStock_Click(sender As Object, e As EventArgs) Handles btnStock.Click
         If numCantidad.Value <= 0 Then
             MessageBox.Show("Cantidad inválida")
             Exit Sub
@@ -263,7 +166,7 @@ Public Class INVENTARIO
             cmd.Parameters.AddWithValue("@cant", numCantidad.Value)
             cmd.Parameters.AddWithValue("@id", cmbProducto.SelectedValue)
 
-            Dim filas As Integer = cmd.ExecuteNonQuery()
+            Dim filas = cmd.ExecuteNonQuery
 
             conexion.Close()
 
@@ -280,6 +183,5 @@ Public Class INVENTARIO
             MessageBox.Show(ex.Message)
             conexion.Close()
         End Try
-
     End Sub
 End Class
